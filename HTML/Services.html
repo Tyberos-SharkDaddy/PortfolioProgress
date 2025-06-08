@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/CSS/Style.css">
+  <title>Services</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #222;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      -webkit-background-clip: text;
+      background-clip: text; /* Standard property for compatibility */
+
+      -webkit-text-fill-color: transparent;
+    }
+    .sub-title {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #6c757d;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-grow: 1;
+    }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 30px 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card:hover:not(.coming-soon) {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(13,110,253,0.3);
+      cursor: pointer;
+    }
+    .icon {
+      font-size: 48px;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #16181b;
+    }
+    .card-desc {
+      font-size: 1rem;
+      color: #495057;
+      line-height: 1.6;
+    }
+    .coming-soon {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .motto {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      background: #0d6efd22;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #0d6efd;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+          <a href="/" class="brand" aria-label="Home">
+            <img src="/images/logo.png" alt="Logo of Your Name" class="logo" />
+            <span class="brand-name">Your Name</span>
+          </a>
+          <nav class="nav-links" role="navigation">
+            <a href="#home">Home</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="Services.html">Services</a>
+            <a href="#contact" class="cta">Let’s Work Together</a>
+          </nav>
+          <button class="menu-button" aria-label="Toggle Menu">☰</button>
+        </div>
+      </header> 
+  <h1>Services</h1>
+  <p class="sub-title">What I Offer to Bring Your Vision to Life</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🎨</div>
+      <div class="card-title">Canva for Posters</div>
+      <div class="card-desc">Creative and eye-catching poster designs tailored to your brand’s message.</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <div class="card-title">Daily Blog Posts</div>
+      <div class="card-desc">Engaging content delivered daily to boost your online presence and audience.</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <div class="card-title">Web Development</div>
+      <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
+    </div>
+
+    <div class="card">
+        <div class="icon">💻</div>
+        <div class="card-title">Mobile Development</div>
+        <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
+      </div>
+  
+    <div class="card coming-soon">
+      <div class="icon">🎮</div>
+      <div class="card-title">Game Development</div>
+      <div class="card-desc">Coming Soon: Interactive and immersive gaming experiences.</div>
+    </div>
+
+    <div class="card coming-soon">
+      <div class="icon">🖥️</div>
+      <div class="card-title">3D Modelling</div>
+      <div class="card-desc">Coming Soon: High-quality 3D models for your projects and presentations.</div>
+    </div>
+  </div>
+
+  <div class="motto">
+    From idea to impact — simple, effective digital solutions. Let’s make it happen.
+  </div>
+</body>
+</html>

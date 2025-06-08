@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fresh Grad Portfolio</title>
+  <link rel="stylesheet" href="/CSS/Style.css" />
+  <!-- Optional: add Google Fonts link for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="/" class="brand" aria-label="Home">
+        <img src="/images/logo.png" alt="Logo of Your Name" class="logo" />
+        <span class="brand-name">Your Name</span>
+      </a>
+      <nav class="nav-links" role="navigation">
+        <a href="#home">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="Services.html">Services</a>
+        <a href="#contact" class="cta">Let’s Work Together</a>
+      </nav>
+      <button class="menu-button" aria-label="Toggle Menu">☰</button>
+    </div>
+  </header> 
+
+  <main>
+    <!-- Hero Section -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <div class="text">
+          <div class="text-one">Hi there,</div>
+          <div class="text-two">I'm Your Name</div>
+          <div class="text-three">From idea to impact — simple, effective digital solutions. Let’s make it happen </div>
+          </div>
+        </div>
+        <div class="button">
+          <a href="Appointmnet.html" class="about-btn">Let’s Work Together</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about" id="about">
+      <div class="container about-container">
+        <h2 class="section-title">How we can Bring your Ideas to life</h2>
+        <div class="about-content">
+          <!-- Placeholder for your photo or avatar -->
+          <img src="/images/your-photo.jpg" alt="Photo of Your Name" class="about-photo" />
+          <div class="about-text">
+            <p>
+              The primary focus is on developing practical and thoughtful digital solutions that directly address users' needs. The goal isn't simply to write code, but to ensure that the final product is intuitive, user-friendly, and clearly solves the problem it was designed for. Every feature and interaction is crafted with usability in mind, making technology more accessible and meaningful for real-world users.
+
+
+            </p>
+            <p>
+              Whether it’s streamlining a process, improving user experience, or launching a new digital product, I’m here to turn your ideas into real results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <h1>Services</h1>
+    <p class="sub-title">What I Offer to Bring Your Vision to Life</p>
+  
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🎨</div>
+        <div class="card-title">Canva for Posters</div>
+        <div class="card-desc">Creative and eye-catching poster designs tailored to your brand’s message.</div>
+      </div>
+  
+      <div class="card">
+        <div class="icon">📝</div>
+        <div class="card-title">Daily Blog Posts</div>
+        <div class="card-desc">Engaging content delivered daily to boost your online presence and audience.</div>
+      </div>
+  
+      <div class="card">
+        <div class="icon">💻</div>
+        <div class="card-title">Web Development</div>
+        <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
+      </div>
+  
+      <div class="card">
+          <div class="icon">💻</div>
+          <div class="card-title">Mobile Development</div>
+          <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
+        </div>
+    
+      <div class="card coming-soon">
+        <div class="icon">🎮</div>
+        <div class="card-title">Game Development</div>
+        <div class="card-desc">Coming Soon: Interactive and immersive gaming experiences.</div>
+      </div>
+  
+      <div class="card coming-soon">
+        <div class="icon">🖥️</div>
+        <div class="card-title">3D Modelling</div>
+        <div class="card-desc">Coming Soon: High-quality 3D models for your projects and presentations.</div>
+      </div>
+    </div>
+  
+    <div class="motto">
+      From idea to impact — simple, effective digital solutions. Let’s make it happen.
+    </div>
+
+    <!-- Projects Section -->
+<section id="projects" class="projects-section">
+  <div class="container projects-grid">
+    <a href="https://example.com/project1" target="_blank" rel="noopener noreferrer">
+      <img src="https://via.placeholder.com/400x250?text=Project+1" alt="Project 1 Image" class="project-image" />
+    </a>
+    <a href="https://example.com/project2" target="_blank" rel="noopener noreferrer">
+      <img src="https://via.placeholder.com/400x250?text=Project+2" alt="Project 2 Image" class="project-image" />
+    </a>
+    <a href="https://example.com/project3" target="_blank" rel="noopener noreferrer">
+      <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3 Image" class="project-image" />
+    </a>
+    <a href="https://example.com/project4" target="_blank" rel="noopener noreferrer">
+      <img src="https://via.placeholder.com/400x250?text=Project+4" alt="Project 4 Image" class="project-image" />
+    </a>
+  </div>
+</section>
+ <!-- Contact Section -->
+   
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2025 Your Name. All rights reserved.</p>
+      <nav class="footer-nav" role="navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!-- Example social links -->
+      <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a> |
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Toggle menu on small screens
+    document.querySelector('.menu-button').addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
