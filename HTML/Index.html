@@ -5,11 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fresh Grad Portfolio</title>
   <link rel="stylesheet" href="/CSS/Style.css" />
+  <link rel="stylesheet" href="/CSS/Testimonials&Timeline.css">
   <!-- Optional: add Google Fonts link for better typography -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 </head>
 <body>
+<style>
+  h1 {
+      text-align: center;
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
+    .sub-title {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #6c757d;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-grow: 1;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      padding: 30px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card:hover:not(.coming-soon) {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(13, 110, 253, 0.3);
+      cursor: pointer;
+    }
+
+    .icon {
+      font-size: 48px;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #16181b;
+    }
+
+    .card-desc {
+      font-size: 1rem;
+      color: #495057;
+      line-height: 1.6;
+    }
+
+    .coming-soon {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .motto {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      background: #0d6efd22;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #0d6efd;
+      user-select: none;
+    }
+</style>
   <!-- Header / Navbar -->
   <header class="navbar">
     <div class="container">
@@ -18,11 +104,11 @@
         <span class="brand-name">Your Name</span>
       </a>
       <nav class="nav-links" role="navigation">
-        <a href="#home">Home</a>
+        <a href="Index.html">Home</a>
         <a href="AboutMe.html">About Me</a>
-        <a href="#projects">Projects</a>
+        <a href="Projects.html">Projects</a>
         <a href="Services.html">Services</a>
-        <a href="#contact" class="cta">Let’s Work Together</a>
+        <a href="Appointmnet.html" class="cta">Let’s Work Together</a>
       </nav>
       <button class="menu-button" aria-label="Toggle Menu">☰</button>
     </div>
@@ -34,8 +120,9 @@
       <div class="home-content">
         <div class="text">
           <div class="text-one">Hi there,</div>
-          <div class="text-two">I'm Your Name</div>
-          <div class="text-three">From idea to impact — simple, effective digital solutions. Let’s make it happen </div>
+          <div class="text-two">I'm Vinceneil A. Ursal</div>
+  
+          <div class="text-three">From idea to impact simple, effective digital solutions. Let’s make it happen </div>
           </div>
         </div>
         <div class="button">
@@ -47,7 +134,7 @@
     <!-- About Me Section -->
     <section class="about" id="about">
       <div class="container about-container">
-        <h2 class="section-title">How we can Bring your Ideas to life</h2>
+        <h2 class="section-title">How can we Bring your Ideas to life</h2>
         <div class="about-content">
           <!-- Placeholder for your photo or avatar -->
           <img src="/images/your-photo.jpg" alt="Photo of Your Name" class="about-photo" />
@@ -64,6 +151,37 @@
         </div>
       </div>
     </section>
+    <section class="project-process">
+      <h2>Project Process</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Plan</h3>
+          <p>Figure out what to build and set small goals for each step.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Build</h3>
+          <p>Create the parts of the project in short cycles, focusing on one piece at a time.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Test</h3>
+          <p>Check if everything works right and fix problems quickly.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Review</h3>
+          <p>Look back at what was built and gather feedback to improve.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <h3>Repeat</h3>
+          <p>Keep doing these steps in cycles until the project is done and polished.</p>
+        </div>
+      </div>
+    </section>
+    
     <h1>Services</h1>
     <p class="sub-title">What I Offer to Bring Your Vision to Life</p>
   
@@ -87,11 +205,11 @@
       </div>
   
       <div class="card">
-          <div class="icon">💻</div>
-          <div class="card-title">Mobile Development</div>
-          <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
-        </div>
-    
+        <div class="icon">📱</div>
+        <div class="card-title">Mobile Development</div>
+        <div class="card-desc">Crafting mobile-friendly applications for iOS and Android platforms.</div>
+      </div>
+  
       <div class="card coming-soon">
         <div class="icon">🎮</div>
         <div class="card-title">Game Development</div>
@@ -105,12 +223,11 @@
       </div>
     </div>
   
-    <div class="motto">
-      From idea to impact — simple, effective digital solutions. Let’s make it happen.
-    </div>
 
     <!-- Projects Section -->
 <section id="projects" class="projects-section">
+  <h1>Projects</h1>
+  <p class="sub-title">Explore My Work</p>
   <div class="container projects-grid">
     <a href="https://example.com/project1" target="_blank" rel="noopener noreferrer">
       <img src="https://via.placeholder.com/400x250?text=Project+1" alt="Project 1 Image" class="project-image" />
@@ -121,31 +238,67 @@
     <a href="https://example.com/project3" target="_blank" rel="noopener noreferrer">
       <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3 Image" class="project-image" />
     </a>
-    <a href="https://example.com/project4" target="_blank" rel="noopener noreferrer">
-      <img src="https://via.placeholder.com/400x250?text=Project+4" alt="Project 4 Image" class="project-image" />
-    </a>
+   
   </div>
 </section>
  <!-- Contact Section -->
-   
+ <section class="testimonials-section">
+  <h1 class="main-title">Testimonials</h1>
+  <p class="sub-title">What my clients say about working with me</p>
+  <div class="testimonials-container">
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Very professional and fast turnaround. Highly recommend!"</p>
+      <h4 class="testimonial-author">— John Doe, Business Owner</h4>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Delivered exactly what I asked for. Great communication."</p>
+      <h4 class="testimonial-author">— Jane Smith, Freelancer</h4>
+    </div>
+  </div>
+</section>
+<section class="timeline-section">
+  <h1 class="main-title">Experience</h1>
+  <p class="sub-title">A timeline of my journey and career growth</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3 class="timeline-role">Frontend Developer</h3>
+        <p class="timeline-company">XYZ Corp — Jan 2022 to Present</p>
+        <p class="timeline-description">Worked on multiple web applications focusing on responsive design and user interaction.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3 class="timeline-role">Intern Developer</h3>
+        <p class="timeline-company">ABC Agency — June 2021 to Dec 2021</p>
+        <p class="timeline-description">Assisted in building and testing websites using HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer class="footer">
-    <div class="container footer-container">
-      <p>&copy; 2025 Your Name. All rights reserved.</p>
-      <nav class="footer-nav" role="navigation">
+    <div class="footer-container">
+      <p class="footer-tagline">From idea to impact — simple, effective digital solutions.</p>
+  
+      <div class="footer-links">
         <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="Projects.html">Projects</a>
         <a href="#contact">Contact</a>
-      </nav>
-      <!-- Example social links -->
-      <div class="social-links">
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a> |
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
       </div>
+  
+      <div class="footer-social">
+        <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank">LinkedIn</a>
+      </div>
+  
+      <p class="footer-copy">&copy; 2025 Your Name</p>
     </div>
   </footer>
+  
   
   <script>
     // Toggle menu on small screens
