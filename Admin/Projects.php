@@ -2,312 +2,279 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Portfolio Dashboard</title>
-    <link rel="stylesheet" href="Dashboard.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build In Progress</title>
+    <!-- Bootstrap CSS for minimalist and professional styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: #f7f7f7;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: #222;
-        }
-
-        .main-content {
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 0 16px;
-        }
-
-        .page-title {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f6f8;
         }
 
         .card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-            padding: 32px 24px 24px 24px;
-            margin-bottom: 32px;
-        }
-
-        .add-project-btn {
-            background: #222;
-            color: #fff;
             border: none;
-            border-radius: 6px;
-            padding: 8px 20px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .add-project-btn:hover {
-            background: #444;
-        }
-
-        .project-categories {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 24px;
-        }
-
-        .category-btn {
-            background: #f2f2f2;
-            border: none;
-            border-radius: 5px;
-            padding: 7px 18px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .category-btn.active,
-        .category-btn:hover {
-            background: #222;
-            color: #fff;
-        }
-
-        .projects-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-            margin-top: 10px;
-        }
-
-        .project-card {
-            background: #fafbfc;
-            border: 1px solid #ececec;
-            border-radius: 8px;
-            padding: 18px 20px;
-            transition: box-shadow 0.2s;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
-            display: flex;
-            flex-direction: column;
-            min-height: 170px;
-        }
-
-        .project-card:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
-        }
-
-        .project-card h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .project-card p {
-            margin: 4px 0;
-            font-size: 0.98rem;
-        }
-
-        /* Modal */
-        #projectModal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.12);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #projectModal .modal-content {
-            background: #fff;
-            padding: 28px 22px 22px 22px;
             border-radius: 10px;
-            width: 95%;
-            max-width: 370px;
-            position: relative;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
         }
 
-        #closeModal {
-            position: absolute;
-            top: 10px;
-            right: 16px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #888;
-            cursor: pointer;
+        .card:hover {
+            transform: translateY(-5px);
         }
 
-        #closeModal:hover {
-            color: #222;
+        .progress-bar {
+            border-radius: 5px;
         }
 
-        #projectForm label {
-            font-size: 0.97rem;
+        .add-btn,
+        .filter-btn {
+            border-radius: 50px;
+            padding: 10px 20px;
             font-weight: 500;
+            margin-left: 10px;
         }
 
-        #projectForm input,
-        #projectForm textarea,
-        #projectForm select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 4px;
-            margin-bottom: 14px;
-            font-size: 1rem;
-            background: #fafbfc;
-        }
-
-        #projectForm button[type="submit"] {
-            background: #222;
-            color: #fff;
+        .modal-content {
+            border-radius: 15px;
             border: none;
-            border-radius: 5px;
-            padding: 8px 18px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s;
         }
 
-        #projectForm button[type="submit"]:hover {
-            background: #444;
+        .table-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        @media (max-width: 600px) {
-            .main-content {
-                padding: 0 4px;
-            }
-
-            .card {
-                padding: 18px 6px 12px 6px;
-            }
+        .card-text small {
+            font-size: 0.85rem;
+            color: #6c757d;
         }
-        
+
+        .filter-dropdown .dropdown-item:hover {
+            background-color: #e9ecef;
+        }
+
+        .description-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .modal-body .row {
+            row-gap: 1rem;
+        }
     </style>
 </head>
 
 <body>
-    <div class="main-content">
-        <h1 class="page-title">Projects</h1>
-        <div class="card">
-            <!-- Add Project Button -->
-            <div style="display:flex; justify-content:flex-end; margin-bottom:16px;">
-                <button id="addProjectBtn" class="add-project-btn">
-                    + Add New Project
-                </button>
-            </div>
-            <!-- Project Categories -->
-            <div class="project-categories">
-                <button class="category-btn active" data-category="All">All</button>
-                <button class="category-btn" data-category="Web Design">Web Design</button>
-                <button class="category-btn" data-category="Development">Development</button>
-                <button class="category-btn" data-category="Branding">Branding</button>
-                <button class="category-btn" data-category="UI/UX">UI/UX</button>
-            </div>
-            <!-- Projects List -->
-            <div class="projects-list">
-                <!-- Example Project Cards -->
-                <div class="project-card" data-category="Web Design">
-                    <h3>Company Website Redesign</h3>
-                    <p><strong>Category:</strong> Web Design</p>
-                    <p><strong>Description:</strong> Revamp the company website for a modern look and improved UX.</p>
-                    <p><strong>Status:</strong> In Progress</p>
+    <div class="table-container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold">Build In Progress</h2>
+            <div>
+                <div class="dropdown d-inline-block filter-dropdown">
+                    <button class="btn btn-outline-primary filter-btn dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter by Status
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                        <li><a class="dropdown-item" href="#" data-filter="all">All</a></li>
+                        <li><a class="dropdown-item" href="#" data-filter="In Progress">In Progress</a></li>
+                        <li><a class="dropdown-item" href="#" data-filter="Not Started">Not Started</a></li>
+                        <li><a class="dropdown-item" href="#" data-filter="Completed">Completed</a></li>
+                    </ul>
                 </div>
-                <div class="project-card" data-category="Development">
-                    <h3>Portfolio Web App</h3>
-                    <p><strong>Category:</strong> Development</p>
-                    <p><strong>Description:</strong> Build a personal portfolio web application with dynamic content.</p>
-                    <p><strong>Status:</strong> Completed</p>
+                <div class="dropdown d-inline-block filter-dropdown">
+                    <button class="btn btn-outline-primary filter-btn dropdown-toggle" type="button" id="categoryFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter by Category
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="categoryFilterDropdown">
+                        <li><a class="dropdown-item" href="#" data-category="all">All</a></li>
+                        <li><a class="dropdown-item" href="#" data-category="Website Dev">Website Dev</a></li>
+                        <li><a class="dropdown-item" href="#" data-category="Canva">Canva</a></li>
+                        <li><a class="dropdown-item" href="#" data-category="Mobile Dev">Mobile Dev</a></li>
+                    </ul>
                 </div>
-                <div class="project-card" data-category="Branding">
-                    <h3>Logo Design for Startup</h3>
-                    <p><strong>Category:</strong> Branding</p>
-                    <p><strong>Description:</strong> Create a unique logo for a tech startup.</p>
-                    <p><strong>Status:</strong> Planning</p>
+                <button class="btn btn-primary add-btn" data-bs-toggle="modal" data-bs-target="#addProjectModal">+ Add Project</button>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="projectCards">
+            <!-- Sample Cards -->
+            <div class="col project-card" data-status="In Progress" data-category="Website Dev">
+                <div class="card p-3">
+                    <h5 class="card-title">Project Alpha</h5>
+                    <p class="card-text text-muted">Category: Website Dev</p>
+                    <p class="card-text text-muted">Status: In Progress</p>
+                    <p class="card-text"><small>Start Date: 15 Jun 2025</small></p>
+                    <p class="card-text"><small>End Date: 30 Jun 2025</small></p>
+                    <p class="description-text" title="Building a responsive e-commerce website">Building a responsive e-commerce website</p>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                </div>
+            </div>
+            <div class="col project-card" data-status="Not Started" data-category="Mobile Dev">
+                <div class="card p-3">
+                    <h5 class="card-title">Project Beta</h5>
+                    <p class="card-text text-muted">Category: Mobile Dev</p>
+                    <p class="card-text text-muted">Status: Not Started</p>
+                    <p class="card-text"><small>Start Date: 20 Jun 2025</small></p>
+                    <p class="card-text"><small>End Date: 10 Jul 2025</small></p>
+                    <p class="description-text" title="Developing a fitness tracking mobile app">Developing a fitness tracking mobile app</p>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                </div>
+            </div>
+            <!-- Add more cards dynamically via PHP or JS -->
+        </div>
+    </div>
+
+    <!-- Modal for Adding Project -->
+    <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="addProjectModalLabel">Add New Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addProjectForm">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="projectName" class="form-label">Project Name</label>
+                                <input type="text" class="form-control" id="projectName" placeholder="Enter project name" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="projectCategory" class="form-label">Category</label>
+                                <select class="form-select" id="projectCategory" required>
+                                    <option value="" disabled selected>Select a category</option>
+                                    <option value="Website Dev">Website Dev</option>
+                                    <option value="Canva">Canva</option>
+                                    <option value="Mobile Dev">Mobile Dev</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="projectStatus" class="form-label">Status</label>
+                                <select class="form-select" id="projectStatus" required>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Not Started">Not Started</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="projectStartDate" class="form-label">Start Date</label>
+                                <input type="date" class="form-control" messaid="projectStartDate" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="projectEndDate" class="form-label">End Date</label>
+                                <input type="date" class="form-control" id="projectEndDate" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="projectProgress" class="form-label">Progress (%)</label>
+                                <input type="number" class="form-control" id="projectProgress" min="0" max="100" placeholder="Enter progress percentage" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="projectDescription" class="form-label">What is the Project all about?</label>
+                                <textarea class="form-control" id="projectDescription" rows="4" placeholder="Describe the project" required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Save Project</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal Structure -->
-    <div id="projectModal">
-        <div class="modal-content">
-            <button id="closeModal">&times;</button>
-            <h2 style="margin-top:0;">Add New Project</h2>
-            <form id="projectForm">
-                <label for="projectName">Project Name</label>
-                <input type="text" id="projectName" name="projectName" required>
-                <label for="projectDesc">Description</label>
-                <textarea id="projectDesc" name="projectDesc" required></textarea>
-                <label for="projectCategory">Category</label>
-                <select id="projectCategory" name="projectCategory" required>
-                    <option value="">Select Category</option>
-                    <option value="Web Design">Web Design</option>
-                    <option value="Development">Development</option>
-                    <option value="Branding">Branding</option>
-                    <option value="UI/UX">UI/UX</option>
-                </select>
-                <button type="submit">Add Project</button>
-            </form>
-        </div>
-    </div>
+    <!-- Bootstrap JS and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Modal open/close logic
-        const addBtn = document.getElementById('addProjectBtn');
-        const modal = document.getElementById('projectModal');
-        const closeModal = document.getElementById('closeModal');
-        addBtn.onclick = () => modal.style.display = 'flex';
-        closeModal.onclick = () => modal.style.display = 'none';
-        window.onclick = (e) => {
-            if (e.target === modal) modal.style.display = 'none';
-        };
-
-        // Add project to list (front-end only)
-        document.getElementById('projectForm').onsubmit = function(e) {
+        // Form submission handling with basic validation
+        document.getElementById('addProjectForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            // Collect form data
             const name = document.getElementById('projectName').value;
-            const desc = document.getElementById('projectDesc').value;
-            const cat = document.getElementById('projectCategory').value;
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.setAttribute('data-category', cat);
-            card.innerHTML = `<h3>${name}</h3>
-                <p><strong>Category:</strong> ${cat}</p>
-                <p><strong>Description:</strong> ${desc}</p>
-                <p><strong>Status:</strong> Planning</p>`;
-            document.querySelector('.projects-list').prepend(card);
-            modal.style.display = 'none';
-            this.reset();
-            filterProjects(currentCategory); // keep filter after adding
-        };
+            const category = document.getElementById('projectCategory').value;
+            const status = document.getElementById('projectStatus').value;
+            const progress = document.getElementById('projectProgress').value;
+            const startDate = document.getElementById('projectStartDate').value;
+            const endDate = document.getElementById('projectEndDate').value;
+            const description = document.getElementById('projectDescription').value;
 
-        // Category filter logic
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        let currentCategory = "All";
-        categoryBtns.forEach(btn => {
-            btn.onclick = function() {
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentCategory = this.getAttribute('data-category');
-                filterProjects(currentCategory);
+            // Basic validation: Ensure end date is after start date
+            if (new Date(endDate) < new Date(startDate)) {
+                alert('End Date must be after Start Date.');
+                return;
             }
+
+            // Placeholder for AJAX or PHP integration
+            console.log('New Project:', {
+                name,
+                category,
+                status,
+                progress,
+                startDate,
+                endDate,
+                description
+            });
+            // Close modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addProjectModal'));
+            modal.hide();
+            // Reset form
+            e.target.reset();
         });
 
-        function filterProjects(category) {
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                if (category === "All" || card.getAttribute('data-category') === category) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
+        // Filter projects by status
+        document.querySelectorAll('#filterDropdown .dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const filter = this.getAttribute('data-filter');
+                const cards = document.querySelectorAll('.project-card');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-status') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update button text
+                document.getElementById('filterDropdown').textContent = filter === 'all' ? 'Filter by Status' : `Filter: ${filter}`;
             });
-        }
+        });
+
+        // Filter projects by category
+        document.querySelectorAll('#categoryFilterDropdown .dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.getAttribute('data-category');
+                const cards = document.querySelectorAll('.project-card');
+
+                cards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update button text
+                document.getElementById('categoryFilterDropdown').textContent = category === 'all' ? 'Filter by Category' : `Filter: ${category}`;
+            });
+        });
     </script>
 </body>
 

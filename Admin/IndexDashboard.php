@@ -189,12 +189,12 @@
 <body>
     <div class="topbar">
         <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-        <strong>Home</strong>
-        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
     </div>
 
     <div class="sidebar" id="sidebar">
+        
         <h2>Dashboard</h2>
+        
         <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link text-white" href="anaylistics.php">📊 Analytics</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="build.php">🛠 Build In Progress</a></li>
