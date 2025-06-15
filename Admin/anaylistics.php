@@ -232,16 +232,33 @@
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <ul class="nav">
-      <li class="nav-item"><a class="nav-link text-white" href="IndexDashboard.php">🏠 Home</a></li>
-      <li class="nav-item"><a class="nav-link text-white active" href="analytics.php">📊 Analytics</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="build.php">🛠 Build In Progress</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="clients.php">💼 Client Stories</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="tasks.php">🧠 Task Universe</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="notifications.php">📢 Notifications</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="bookings.php">📅 Bookings</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="feedback.php">✅ Feedback</a></li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="IndexDashboard.php">🏠 Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="analytics.php">📊 Analytics</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="build.php">🛠 Build In Progress</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="clients.php">💼 Client Stories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="tasks.php">🧠 Task Universe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="notifications.php">📢 Notifications</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="bookings.php">📅 Bookings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="feedback.php">✅ Feedback</a>
+      </li>
     </ul>
   </div>
+
 
   <div class="main" id="main">
     <!-- Hamburger Menu -->
