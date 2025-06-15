@@ -17,7 +17,6 @@ body {
 .navbar {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px);
-  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #eee;
@@ -105,50 +104,150 @@ body {
 
 /* ========== Hero Section ========== */
 .home {
-  padding: 120px 20px;
-  background: linear-gradient(to right, #e3f2fd, #f0f4f8);
+  padding: 90px 0 70px 0;
+  background: #f8f9fc;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-content .text {
-  font-size: 2rem;
-  color: #333;
+  font-size: 1.6rem;
+  color: #23272f;
   margin-bottom: 1rem;
+  font-weight: 500;
   animation: fadeIn 1s ease;
+  letter-spacing: 0.01em;
 }
 
-.home-content .text-two {
-  font-size: 3rem;
+.text-one {
+  font-size: 2.05rem;
+  color: #007bff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+.text-two {
+  font-size: 4.1rem;
   font-weight: 800;
-  background: linear-gradient(to right, #007bff, #00b4d8);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: slideUp 1s ease;
+  color: #23272f;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
 }
 
-.button button {
-  margin-top: 1.5rem;
-  padding: 12px 25px;
-  font-size: 1rem;
-  background: #1a1a1a;
+.text-three {
+  font-size: 2.08rem;
+  color: #495057;
+  margin-bottom: 1.2rem;
+  font-weight: 900;
+  line-height: 1.7;
+}
+
+.home-summary {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #131313;
+  font-weight: 500;
+  opacity: 0.92;
+  animation: fadeIn 1.2s 0.7s both;
+}
+
+.home-actions {
+  margin-top: 2.2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-btn,
+.secondary-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #007bff, #00b4d8);
   color: #fff;
-  border: none;
+  padding: 0.8rem 2rem;
   border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 10px rgba(0,123,255,0.07);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  border: none;
+  outline: none;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.button button:hover {
-  background: #333;
-  transform: translateY(-3px);
+.secondary-btn {
+  background: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  box-shadow: none;
+  margin-left: 0;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.secondary-btn:hover,
+.secondary-btn:focus {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.about-btn:hover,
+.about-btn:focus {
+  background: linear-gradient(90deg, #005fa3, #0086c3);
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0,123,255,0.13);
+}
+
+/* Minimal quick links (if used) */
+.quick-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quick-link {
+  color: #495057;
+  font-size: 1rem;
+  text-decoration: underline;
+  transition: color 0.2s;
+  opacity: 0.85;
+}
+
+.quick-link:hover,
+.quick-link:focus {
+  color: #007bff;
+  opacity: 1;
 }
 
 /* ========== About Section ========== */
 .about {
-  background: #ffffff;
+  background: #fff;
   padding: 80px 20px;
   text-align: center;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  margin: 40px 0;
+  transition: box-shadow 0.3s;
+}
+
+.about:hover {
+  box-shadow: 0 8px 32px rgba(0,123,255,0.08);
 }
 
 .section-title {
@@ -156,6 +255,7 @@ body {
   margin-bottom: 30px;
   font-weight: 800;
   color: #1a1a1a;
+  letter-spacing: 1px;
 }
 
 .about-text p {
@@ -163,30 +263,41 @@ body {
   max-width: 750px;
   margin: 0 auto 20px;
   line-height: 1.8;
+  color: #444;
 }
 
 .about-btn {
   display: inline-block;
   margin-top: 20px;
-  background: #1a1a1a;
+  background: linear-gradient(90deg, #007bff, #00b4d8);
   color: #fff;
-  padding: 12px 25px;
-  border-radius: 8px;
+  padding: 14px 32px;
+  border-radius: 10px;
   font-weight: 700;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 10px rgba(0,123,255,0.07);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
-.about-btn:hover {
-  background: #444;
+.about-btn:hover,
+.about-btn:focus {
+  background: linear-gradient(90deg, #005fa3, #0086c3);
   transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,123,255,0.13);
 }
 
 .about-img img {
   margin-top: 40px;
   max-width: 100%;
   border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.about-img img:hover {
+  box-shadow: 0 24px 48px rgba(0,123,255,0.13);
+  transform: scale(1.03);
 }
 
 /* ========== Projects Section ========== */
@@ -197,6 +308,15 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+}
+
+.projects-section h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.2em;
+  letter-spacing: 1px;
 }
 
 .projects-section .section-title {
@@ -211,13 +331,16 @@ body {
   border-radius: 15px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
-.projects-section a:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.projects-section a:hover,
+.projects-section a:focus {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.15);
+  z-index: 2;
 }
 
 .projects-section img {
@@ -225,6 +348,34 @@ body {
   height: 200px;
   object-fit: cover;
   display: block;
+  transition: filter 0.3s, transform 0.2s;
+}
+
+.projects-section a:hover img,
+.projects-section a:focus img {
+  filter: brightness(0.96) blur(1px);
+  transform: scale(1.04);
+}
+
+.projects-section a::after {
+  content: "View Project";
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(0,123,255,0.85);
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5em 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+.projects-section a:hover::after,
+.projects-section a:focus::after {
+  opacity: 1;
 }
 
 /* ========== Services Section ========== */

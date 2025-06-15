@@ -1,219 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Projects - Categorized</title>
-<style>
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 40px 20px;
-  background: #f4f6f8;
-  color: #212529;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Categorized</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #212529;
+    }
 
-h1 {
-  text-align: center;
-  font-weight: 800;
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #0d6efd, #6610f2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    h1 {
+      text-align: center;
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-.navbar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #dee2e6;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-}
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 2rem 2rem;
+      
+      display: flex;
+      flex-direction: row;      
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #dee2e6;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
 
-.navbar .container {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .navbar .container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  text-decoration: none;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
 
-.logo {
-  width: 45px;
-}
+    .logo {
+      width: 45px;
+    }
 
-.brand-name {
-  font-size: 2.3rem;
-  font-weight: 900;
-  color: #0d6efd;
-  letter-spacing: 1.5px;
-}
+    .brand-name {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: #0d6efd;
+      letter-spacing: 1.5px;
+    }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
 
-.nav-links a {
-  position: relative;
-  text-decoration: none;
-  color: #333;
-  font-size: 1.2rem;
-  font-weight: 700;
-  transition: color 0.3s ease;
-}
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: #333;
+      font-size: 1.2rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  background: #007bff;
-  left: 0;
-  bottom: -5px;
-  transition: width 0.3s ease;
-}
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      background: #007bff;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
 
-.nav-links a:hover {
-  color: #0d6efd;
-}
+    .nav-links a:hover {
+      color: #0d6efd;
+    }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-.nav-links a.cta {
-  background: linear-gradient(135deg, #007bff, #00b4d8);
-  color: white;
-  padding: 0.6rem 1.5rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  font-weight: 700;
-}
+    .nav-links a.cta {
+      background: linear-gradient(135deg, #007bff, #00b4d8);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      font-weight: 700;
+    }
 
-.nav-links a.cta:hover {
-  background: linear-gradient(135deg, #005fa3, #0086c3);
-  transform: scale(1.05);
-}
+    .nav-links a.cta:hover {
+      background: linear-gradient(135deg, #005fa3, #0086c3);
+      transform: scale(1.05);
+    }
 
-.menu-button {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+    .menu-button {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
-/* Page Intro */
-p.page-intro {
-  text-align: center;
-  color: #6c757d;
-  margin-bottom: 40px;
-  font-size: 1.15rem;
-}
+    /* Page Intro */
+    p.page-intro {
+      text-align: center;
+      color: #6c757d;
+      margin-bottom: 40px;
+      font-size: 1.15rem;
+    }
 
-/* Section Title */
-section.category {
-  margin-bottom: 60px;
-}
+    /* Section Title */
+    section.category {
+      margin-bottom: 60px;
+    }
 
-section.category h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #0d6efd;
-  border-bottom: 3px solid #6610f2;
-  display: inline-block;
-  padding-bottom: 5px;
-}
+    section.category h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0d6efd;
+      border-bottom: 3px solid #6610f2;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
 
-section.category h2 small {
-  font-weight: 400;
-  font-size: 1rem;
-  color: #888;
-  margin-left: 10px;
-  font-style: italic;
-}
+    section.category h2 small {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #888;
+      margin-left: 10px;
+      font-style: italic;
+    }
 
-/* Project Cards Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
+    /* Project Cards Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
 
-article.project-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+    article.project-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
 
-article.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-}
+    article.project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
 
-article.project-card h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  color: #6610f2;
-}
+    article.project-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #6610f2;
+    }
 
-article.project-card p {
-  color: #495057;
-  font-size: 1rem;
-  line-height: 1.5;
-}
+    article.project-card p {
+      color: #495057;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
-.coming-soon {
-  font-style: italic;
-  color: #888;
-  font-size: 1.1rem;
-  margin-top: 8px;
-}
+    .coming-soon {
+      font-style: italic;
+      color: #888;
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
 
-/* Footer / Motto */
-.moto {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: #0d6efd;
-  margin-top: 40px;
-  border-top: 1px solid #ddd;
-  padding-top: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.moto strong {
-  color: #6610f2;
-}
-</style>
+    /* Footer / Motto */
+    .moto {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #0d6efd;
+      margin-top: 40px;
+      border-top: 1px solid #ddd;
+      padding-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .moto strong {
+      color: #6610f2;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
     <div class="container">
       <a href="/" class="brand" aria-label="Home">
-        <img src="/images/logo.png" alt="Logo of Your Name" class="logo" />
+        <img src="/images/logo.png" alt="Logo" class="logo" />
         <span class="brand-name">Your Name</span>
       </a>
       <nav class="nav-links" role="navigation">

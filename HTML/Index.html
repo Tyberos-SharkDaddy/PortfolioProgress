@@ -11,23 +11,30 @@
 </head>
 <body>
 <style>
-  h1 {
-      text-align: center;
-      font-weight: 800;
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #0d6efd, #6610f2);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .sub-title {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #6c757d;
-      margin-bottom: 40px;
-    }
+   
+   /* Add or update in your <style> or main CSS file */
+  /* Center h1 and .sub-title with consistent spacing and width */
+  h1,
+  .main-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin: 20px auto 10px auto;
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 700px;
+  }
+  
+  .sub-title {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin: 0 auto 36px auto;
+    max-width: 600px;
+    line-height: 1.5;
+  }
 
     .grid {
       display: grid;
@@ -101,7 +108,7 @@
     <div class="container">
       <a href="/" class="brand" aria-label="Home">
         <img src="/images/logo.png" alt="Logo of Your Name" class="logo" />
-        <span class="brand-name">Your Name</span>
+        <span class="brand-name">VINCE</span>
       </a>
       <nav class="nav-links" role="navigation">
         <a href="Index.html">Home</a>
@@ -116,18 +123,23 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="home" id="home">
+       <section class="home" id="home">
       <div class="home-content">
         <div class="text">
           <div class="text-one">Hi there,</div>
-          <div class="text-two">I'm Vinceneil A. Ursal</div>
-  
-          <div class="text-three">From idea to impact simple, effective digital solutions. Let’s make it happen </div>
+          <div class="text-two">I'm Vince</div>
+          <div class="text-three">
+            From idea to impact: simple, effective digital solutions.<br>
+            <span class="home-summary">
+              I help individuals and businesses turn concepts into real, user-friendly products—websites, apps, content, and more. Let’s make your vision a reality!
+            </span>
           </div>
         </div>
-        <div class="button">
+        <div class="home-actions">
           <a href="Appointmnet.html" class="about-btn">Let’s Work Together</a>
+          <a href="#projects" class="about-btn secondary-btn">See My Work</a>
         </div>
+       
       </div>
     </section>
 
