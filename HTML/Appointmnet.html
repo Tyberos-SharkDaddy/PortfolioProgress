@@ -63,53 +63,217 @@
     }
 
     .form-wrapper {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
+      max-width: 650px;
+      margin: 0 auto;
     }
 
     .form-card {
-      width: 100%;
-      max-width: 600px;
-      padding: 2rem;
-      border-radius: 1rem;
-      background: white;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-      transition: all 0.3s ease-in-out;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .form-card:hover {
+      transform: translateY(-4px);
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      color: #1a202c;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
 
     .step-page {
       display: none;
-      animation: fade 0.3s ease-in-out;
+      animation: slideIn 0.4s ease-in-out;
     }
 
     .step-page.active {
       display: block;
     }
 
-    @keyframes fade {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    #indicator {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #007bff;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .btn-check:checked + .btn {
-      box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.5);
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     h5 {
+      font-size: 1.1rem;
       font-weight: 600;
-      color: #333;
+      color: #2d3748;
       margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      color: #4a5568;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #2d3748;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2b6cb0;
+      box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .radio-group input[type="radio"] {
+      display: none;
+    }
+
+    .radio-group label {
+      padding: 0.8rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: #2d3748;
+      background: #f7fafc;
+      text-align: center;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .radio-group input:checked + label {
+      border-color: #2b6cb0;
+      background: #ebf8ff;
+      color: #2b6cb0;
+      font-weight: 600;
+    }
+
+    .radio-group label:hover {
+      border-color: #2b6cb0;
+      background: #e6f0fa;
+    }
+
+    #otherServiceInput {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #2b6cb0;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2c5282;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #edf2f7;
+      color: #4a5568;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
+
+    .btn-success {
+      background: #38b2ac;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #319795;
+      transform: translateY(-2px);
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .modal-content h4 {
+      font-size: 1.5rem;
+      color: #2b6cb0;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-content .btn {
+      background: #38b2ac;
+      color: white;
+    }
+
+    .modal-content .btn:hover {
+      background: #319795;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -133,116 +297,205 @@
 
   <div class="form-wrapper">
     <div class="form-card">
-      <h3 class="text-center text-primary mb-3">Client Support Form</h3>
-      <div id="indicator">Step 1 of 5</div>
-
+      <h3>Client Support Form</h3>
       <form id="clientForm">
-        <!-- Step 1 -->
+        <!-- Step 1: Client Information -->
         <div class="step-page active" id="step1">
-          <h5>1 → What type of service are you looking for?</h5>
-          <div class="btn-group-vertical w-100 mb-3">
-            <input type="radio" class="btn-check" name="supportType" id="s1" value="Website/App" required>
-            <label class="btn btn-outline-primary" for="s1">Website or App</label>
-
-            <input type="radio" class="btn-check" name="supportType" id="s2" value="Game Dev">
-            <label class="btn btn-outline-primary" for="s2">Game Development</label>
-
-            <input type="radio" class="btn-check" name="supportType" id="s3" value="3D">
-            <label class="btn btn-outline-primary" for="s3">3D Modeling / Animation</label>
-
-            <input type="radio" class="btn-check" name="supportType" id="s4" value="Other">
-            <label class="btn btn-outline-primary" for="s4">Other</label>
+          <h5>Client Information</h5>
+          <div class="form-group">
+            <label for="clientName">Full Name</label>
+            <input type="text" id="clientName" name="clientName" required />
           </div>
-          <div class="text-end">
+          <div class="form-group">
+            <label for="clientEmail">Email Address</label>
+            <input type="email" id="clientEmail" name="clientEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="clientPhone">Phone Number</label>
+            <input type="tel" id="clientPhone" name="clientPhone" required />
+          </div>
+          <div class="form-actions">
+            <div></div>
             <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
           </div>
         </div>
 
-        <!-- Step 2 -->
+        <!-- Step 2: Services -->
         <div class="step-page" id="step2">
-          <h5>2 → Describe the project</h5>
-          <textarea class="form-control mb-3" name="description" rows="4" required></textarea>
-          <h5>What is the goal?</h5>
-          <textarea class="form-control mb-3" name="goal" rows="3" required></textarea>
-          <div class="d-flex justify-content-between">
-            <button type="button" class="btn btn-outline-secondary" onclick="prevStep()">Back</button>
+          <h5>What services are you looking for?</h5>
+          <div class="radio-group">
+            <input type="radio" id="s1" name="supportType" value="Website/App" required />
+            <label for="s1">Website or App</label>
+            <input type="radio" id="s2" name="supportType" value="Other" required />
+            <label for="s2">Other</label>
+          </div>
+          <div id="otherServiceInput" class="form-group">
+            <label for="otherService">Please specify other service</label>
+            <input type="text" id="otherService" name="otherService" required />
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
             <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
           </div>
         </div>
 
-        <!-- Step 3 -->
+        <!-- Step 3: Project & Goal -->
         <div class="step-page" id="step3">
-          <h5>3 → Have you started?</h5>
-          <div class="btn-group-vertical w-100 mb-3">
-            <input type="radio" class="btn-check" name="started" id="a1" value="Yes" required>
-            <label class="btn btn-outline-secondary" for="a1">Yes</label>
-
-            <input type="radio" class="btn-check" name="started" id="a2" value="No">
-            <label class="btn btn-outline-secondary" for="a2">No</label>
-
-            <input type="radio" class="btn-check" name="started" id="a3" value="Planning">
-            <label class="btn btn-outline-secondary" for="a3">Planning</label>
+          <h5>Project & Goal</h5>
+          <div class="form-group">
+            <label for="description">Describe the Project</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
           </div>
-          <div class="d-flex justify-content-between">
-            <button type="button" class="btn btn-outline-secondary" onclick="prevStep()">Back</button>
+          <div class="form-group">
+            <label for="goal">What is the Goal?</label>
+            <textarea id="goal" name="goal" rows="3" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
             <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
           </div>
         </div>
 
-        <!-- Step 4 -->
+        <!-- Step 4: Project Stage -->
         <div class="step-page" id="step4">
-          <h5>4 → Preferred discussion platform</h5>
-          <div class="btn-group-vertical w-100 mb-3">
-            <input type="radio" class="btn-check" name="platform" id="p1" value="Zoom" required>
-            <label class="btn btn-outline-info" for="p1">Zoom</label>
-
-            <input type="radio" class="btn-check" name="platform" id="p2" value="Google Meet">
-            <label class="btn btn-outline-info" for="p2">Google Meet</label>
-
-            <input type="radio" class="btn-check" name="platform" id="p3" value="In-person">
-            <label class="btn btn-outline-info" for="p3">In-person</label>
+          <h5>What stage is your project in?</h5>
+          <div class="radio-group">
+            <input type="radio" id="st1" name="stage" value="Planning" required />
+            <label for="st1">Planning Stage</label>
+            <input type="radio" id="st2" name="stage" value="Development" required/>
+            <label for="st2">Development Stage</label>
+            <input type="radio" id="st3" name="stage" value="Testing" required/>
+            <label for="st3">Testing Stage</label>
+            <input type="radio" id="st4" name="stage" value="Not Started" required />
+            <label for="st4">Not Yet Started</label>
           </div>
-          <div class="d-flex justify-content-between">
-            <button type="button" class="btn btn-outline-secondary" onclick="prevStep()">Back</button>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
             <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
           </div>
         </div>
 
-        <!-- Step 5 -->
+        <!-- Step 5: Budget & Timeline -->
         <div class="step-page" id="step5">
-          <h5>5 → Preferred payment method</h5>
-          <div class="btn-group-vertical w-100 mb-3">
-            <input type="radio" class="btn-check" name="payment" id="m1" value="Paypal" required>
-            <label class="btn btn-outline-warning" for="m1">PayPal</label>
-
-            <input type="radio" class="btn-check" name="payment" id="m2" value="Cash">
-            <label class="btn btn-outline-warning" for="m2">Cash</label>
-
-            <input type="radio" class="btn-check" name="payment" id="m3" value="Card">
-            <label class="btn btn-outline-warning" for="m3">Credit Card</label>
+          <h5>Budget & Timeline</h5>
+          <div class="form-group">
+            <label for="budget">Estimated Budget (USD)</label>
+            <input type="number" id="budget" name="budget" min="0" required />
           </div>
-          <div class="d-flex justify-content-between">
-            <button type="button" class="btn btn-outline-secondary" onclick="prevStep()">Back</button>
+          <div class="form-group">
+            <label for="timeline">Estimated Timeline (e.g., 2 months)</label>
+            <input type="text" id="timeline" name="timeline" required />
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 6: Meeting Platform -->
+        <div class="step-page" id="step6">
+          <h5>Preferred Meeting Platform</h5>
+          <div class="radio-group">
+            <input type="radio" id="p1" name="platform" value="Zoom" required />
+            <label for="p1">Zoom</label>
+            <input type="radio" id="p2" name="platform" value="Google Meet" required />
+            <label for="p2">Google Meet</label>
+            <input type="radio" id="p3" name="platform" value="In-person" required />
+            <label for="p3">In-person</label>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 7: Payment Method -->
+        <div class="step-page" id="step7">
+          <h5>Preferred Payment Method</h5>
+          <div class="radio-group">
+            <input type="radio" id="m1" name="payment" value="Paypal" required />
+            <label for="m1">PayPal</label>
+            <input type="radio" id="m2" name="payment" value="Cash" />
+            <label for="m2">Cash</label>
+            <input type="radio" id="m3" name="payment" value="Card" />
+            <label for="m3">Credit Card</label>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 8: Extra Note -->
+        <div class="step-page" id="step8">
+          <h5>Extra Notes</h5>
+          <div class="form-group">
+            <label for="extraNote">Any additional notes?</label>
+            <textarea id="extraNote" name="extraNote" rows="4"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
             <button type="submit" class="btn btn-success">Submit</button>
           </div>
         </div>
       </form>
+      <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+          <h4>Thank You for Choosing Us!</h4>
+          <p>Your submission has been received. We'll get back to you soon.</p>
+          <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
-    let currentStep = 1;
-    const totalSteps = 5;
+  let currentStep = 1;
+    const totalSteps = 8;
 
     function updateStepDisplay() {
       for (let i = 1; i <= totalSteps; i++) {
         document.getElementById('step' + i).classList.remove('active');
       }
       document.getElementById('step' + currentStep).classList.add('active');
-      document.getElementById('indicator').innerText = `Step ${currentStep} of ${totalSteps}`;
+      document.getElementById('thankYouModal').classList.remove('active');
+    }
+
+    function validateStep(step) {
+      const currentStepElement = document.getElementById('step' + step);
+      const requiredInputs = currentStepElement.querySelectorAll('input[required], textarea[required]');
+      let isValid = true;
+
+      requiredInputs.forEach(input => {
+        if (!input.value.trim()) {
+          isValid = false;
+        }
+      });
+
+      if (step === 2) {
+        const otherSelected = document.getElementById('s2').checked;
+        const otherServiceInput = document.getElementById('otherService');
+        if (otherSelected && !otherServiceInput.value.trim()) {
+          isValid = false;
+        }
+      }
+
+      // Check radio buttons for steps with required radio groups
+      if ([2, 4, 6, 7].includes(step)) {
+        const radioGroup = currentStepElement.querySelector('input[type="radio"][required]:checked');
+        if (!radioGroup) {
+          isValid = false;
+        }
+      }
+
+      return isValid;
     }
 
     function nextStep() {
+      if (!validateStep(currentStep)) {
+        alert('Please fill in all required fields before proceeding.');
+        return;
+      }
       if (currentStep < totalSteps) {
         currentStep++;
         updateStepDisplay();
@@ -256,9 +509,30 @@
       }
     }
 
-    document.getElementById('clientForm').addEventListener('submit', function(e) {
+    function closeModal() {
+      document.getElementById('thankYouModal').classList.remove('active');
+      document.getElementById('clientForm').style.display = 'block';
+      document.getElementById('clientForm').reset();
+      currentStep = 1;
+      updateStepDisplay();
+    }
+
+    // Show/hide "Other" service input field
+    document.querySelectorAll('input[name="supportType"]').forEach((radio) => {
+      radio.addEventListener('change', function () {
+        const otherServiceInput = document.getElementById('otherServiceInput');
+        otherServiceInput.style.display = this.value === 'Other' ? 'block' : 'none';
+      });
+    });
+
+    document.getElementById('clientForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      alert('Form submitted successfully!');
+      if (!validateStep(currentStep)) {
+        alert('Please fill in all required fields before submitting.');
+        return;
+      }
+      document.getElementById('clientForm').style.display = 'none';
+      document.getElementById('thankYouModal').classList.add('active');
     });
   </script>
 

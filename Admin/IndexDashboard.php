@@ -197,12 +197,12 @@
         
         <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link text-white" href="anaylistics.php">📊 Analytics</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="build.php">🛠 Build In Progress</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="clients.php">💼 Client Stories</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="tasks.php">🧠 Task Universe</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="Projects.php">🛠 Build In Progress</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="ClientStories.php">💼 Client Stories</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="Taskcalendar.php">🧠 Task Universe</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="notifications.php">📢 Notifications</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="bookings.php">📅 Bookings</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="feedback.php">✅ Feedback</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="Reviews.php">✅ Feedback</a></li>
         </ul>
     </div>
 

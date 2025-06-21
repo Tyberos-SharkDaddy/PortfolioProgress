@@ -9,105 +9,90 @@
   <!-- Optional: add Google Fonts link for better typography -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 </head>
-<body>
 <style>
-   
-   /* Add or update in your <style> or main CSS file */
-  /* Center h1 and .sub-title with consistent spacing and width */
-  h1,
-  .main-title {
-    text-align: center;
-    font-weight: 800;
-    font-size: 2.2rem;
-    margin: 20px auto 10px auto;
-    background: linear-gradient(90deg, #0d6efd, #6610f2);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    max-width: 700px;
-  }
-  
-  .sub-title {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #6c757d;
-    margin: 0 auto 36px auto;
-    max-width: 600px;
-    line-height: 1.5;
-  }
+  #services {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-      flex-grow: 1;
-    }
+#services h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      padding: 30px 20px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+#services .sub-title {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 2rem;
+}
 
-    .card:hover:not(.coming-soon) {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(13, 110, 253, 0.3);
-      cursor: pointer;
-    }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* always 3 columns on desktop */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .icon {
-      font-size: 48px;
-      color: #0d6efd;
-      margin-bottom: 20px;
-    }
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
 
-    .card-title {
-      font-weight: 700;
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: #16181b;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-color: #007bff;
+}
 
-    .card-desc {
-      font-size: 1rem;
-      color: #495057;
-      line-height: 1.6;
-    }
+.card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
 
-    .coming-soon {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+.card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
 
-    .motto {
-      text-align: center;
-      margin-top: 60px;
-      padding: 20px;
-      background: #0d6efd22;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #0d6efd;
-      user-select: none;
-    }
+.card-desc {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.card.coming-soon {
+  opacity: 0.6;
+  background: #eaeaea;
+  border-style: dashed;
+}
+/* Fonts & Base */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+  color: #1c1c1c;
+  margin: 0;
+}
+
+
+
+
 </style>
+<body>
   <!-- Header / Navbar -->
   <header class="navbar">
     <div class="container">
       <a href="/" class="brand" aria-label="Home">
-        <img src="/images/logo.png" alt="Logo of Your Name" class="logo" />
+        <img src="/HTML/Pictures/Untitled design (3).png" alt="Logo of Your Name" class="logo" />
         <span class="brand-name">VINCE</span>
       </a>
       <nav class="nav-links" role="navigation">
@@ -123,7 +108,7 @@
 
   <main>
     <!-- Hero Section -->
-       <section class="home" id="home">
+    <section class="home" id="home">
       <div class="home-content">
         <div class="text">
           <div class="text-one">Hi there,</div>
@@ -139,7 +124,6 @@
           <a href="Appointmnet.html" class="about-btn">Let’s Work Together</a>
           <a href="#projects" class="about-btn secondary-btn">See My Work</a>
         </div>
-       
       </div>
     </section>
 
@@ -148,13 +132,10 @@
       <div class="container about-container">
         <h2 class="section-title">How can we Bring your Ideas to life</h2>
         <div class="about-content">
-          <!-- Placeholder for your photo or avatar -->
           <img src="/images/your-photo.jpg" alt="Photo of Your Name" class="about-photo" />
           <div class="about-text">
             <p>
               The primary focus is on developing practical and thoughtful digital solutions that directly address users' needs. The goal isn't simply to write code, but to ensure that the final product is intuitive, user-friendly, and clearly solves the problem it was designed for. Every feature and interaction is crafted with usability in mind, making technology more accessible and meaningful for real-world users.
-
-
             </p>
             <p>
               Whether it’s streamlining a process, improving user experience, or launching a new digital product, I’m here to turn your ideas into real results.
@@ -163,6 +144,7 @@
         </div>
       </div>
     </section>
+    
     <section class="project-process">
       <h2>Project Process</h2>
       <div class="process-steps">
@@ -194,123 +176,126 @@
       </div>
     </section>
     
-    <h1>Services</h1>
-    <p class="sub-title">What I Offer to Bring Your Vision to Life</p>
-  
-    <div class="grid">
-      <div class="card">
-        <div class="icon">🎨</div>
-        <div class="card-title">Canva for Posters</div>
-        <div class="card-desc">Creative and eye-catching poster designs tailored to your brand’s message.</div>
+    <section id="services">
+      <h1>Services</h1>
+      <p class="sub-title">What I Offer to Bring Your Vision to Life</p>
+    
+      <div class="services-grid">
+        <div class="card">
+          <div class="icon">🎨</div>
+          <div class="card-title">Canva for Posters</div>
+          <div class="card-desc">Creative and eye-catching poster designs tailored to your brand’s message.</div>
+        </div>
+    
+        <div class="card">
+          <div class="icon">📝</div>
+          <div class="card-title">Daily Blog Posts</div>
+          <div class="card-desc">Engaging content delivered daily to boost your online presence and audience.</div>
+        </div>
+    
+        <div class="card">
+          <div class="icon">💻</div>
+          <div class="card-title">Web Development</div>
+          <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
+        </div>
+    
+        <div class="card">
+          <div class="icon">📱</div>
+          <div class="card-title">Mobile Development</div>
+          <div class="card-desc">Crafting mobile-friendly applications for iOS and Android platforms.</div>
+        </div>
+    
+        <div class="card coming-soon">
+          <div class="icon">🎮</div>
+          <div class="card-title">Game Development</div>
+          <div class="card-desc">Coming Soon: Interactive and immersive gaming experiences.</div>
+        </div>
+    
+        <div class="card coming-soon">
+          <div class="icon">🖥️</div>
+          <div class="card-title">3D Modelling</div>
+          <div class="card-desc">Coming Soon: High-quality 3D models for your projects and presentations.</div>
+        </div>
       </div>
+    </section>
+    
   
-      <div class="card">
-        <div class="icon">📝</div>
-        <div class="card-title">Daily Blog Posts</div>
-        <div class="card-desc">Engaging content delivered daily to boost your online presence and audience.</div>
-      </div>
-  
-      <div class="card">
-        <div class="icon">💻</div>
-        <div class="card-title">Web Development</div>
-        <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
-      </div>
-  
-      <div class="card">
-        <div class="icon">📱</div>
-        <div class="card-title">Mobile Development</div>
-        <div class="card-desc">Crafting mobile-friendly applications for iOS and Android platforms.</div>
-      </div>
-  
-      <div class="card coming-soon">
-        <div class="icon">🎮</div>
-        <div class="card-title">Game Development</div>
-        <div class="card-desc">Coming Soon: Interactive and immersive gaming experiences.</div>
-      </div>
-  
-      <div class="card coming-soon">
-        <div class="icon">🖥️</div>
-        <div class="card-title">3D Modelling</div>
-        <div class="card-desc">Coming Soon: High-quality 3D models for your projects and presentations.</div>
-      </div>
-    </div>
-  
-
     <!-- Projects Section -->
-<section id="projects" class="projects-section">
-  <h1>Projects</h1>
-  <p class="sub-title">Explore My Work</p>
-  <div class="container projects-grid">
-    <a href="https://example.com/project1" target="_blank" rel="noopener noreferrer">
-      <img src="https://via.placeholder.com/400x250?text=Project+1" alt="Project 1 Image" class="project-image" />
-    </a>
-    <a href="https://example.com/project2" target="_blank" rel="noopener noreferrer">
-      <img src="https://via.placeholder.com/400x250?text=Project+2" alt="Project 2 Image" class="project-image" />
-    </a>
-    <a href="https://example.com/project3" target="_blank" rel="noopener noreferrer">
-      <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3 Image" class="project-image" />
-    </a>
-   
-  </div>
-</section>
- <!-- Contact Section -->
- <section class="testimonials-section">
-  <h1 class="main-title">Testimonials</h1>
-  <p class="sub-title">What my clients say about working with me</p>
-  <div class="testimonials-container">
-    <div class="testimonial-card">
-      <p class="testimonial-text">"Very professional and fast turnaround. Highly recommend!"</p>
-      <h4 class="testimonial-author">— John Doe, Business Owner</h4>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-text">"Delivered exactly what I asked for. Great communication."</p>
-      <h4 class="testimonial-author">— Jane Smith, Freelancer</h4>
-    </div>
-  </div>
-</section>
-<section class="timeline-section">
-  <h1 class="main-title">Experience</h1>
-  <p class="sub-title">A timeline of my journey and career growth</p>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3 class="timeline-role">Frontend Developer</h3>
-        <p class="timeline-company">XYZ Corp — Jan 2022 to Present</p>
-        <p class="timeline-description">Worked on multiple web applications focusing on responsive design and user interaction.</p>
+    <section id="projects" class="projects-section">
+      <h1>Projects</h1>
+      <p class="sub-title">Explore My Work</p>
+      <div class="container projects-grid">
+        <a href="https://example.com/project1" target="_blank" rel="noopener noreferrer">
+          <img src="/HTML/Pictures/SeaConnect.png" alt="Project 1 Image" class="project-image" />
+        </a>
+        <a href="https://example.com/project2" target="_blank" rel="noopener noreferrer">
+          <img src="/HTML/Pictures/shot (221).png" alt="Project 2 Image" class="project-image" />
+        </a>
+        <a href="https://example.com/project3" target="_blank" rel="noopener noreferrer">
+          <img src="" alt="Project 3 Image" class="project-image" />
+        </a>
       </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3 class="timeline-role">Intern Developer</h3>
-        <p class="timeline-company">ABC Agency — June 2021 to Dec 2021</p>
-        <p class="timeline-description">Assisted in building and testing websites using HTML, CSS, and JavaScript.</p>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="testimonials-section">
+      <h1 class="main-title">Testimonials</h1>
+      <p class="sub-title">What my clients say about working with me</p>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Very professional and fast turnaround. Highly recommend!"</p>
+          <h4 class="testimonial-author">— John Doe, Business Owner</h4>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Delivered exactly what I asked for. Great communication."</p>
+          <h4 class="testimonial-author">— Jane Smith, Freelancer</h4>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
+    
+    <section class="timeline-section">
+      <h1 class="main-title">Experience</h1>
+      <p class="sub-title">A timeline of my journey and career growth</p>
+    
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Frontend Developer</h3>
+            <p class="timeline-company">XYZ Corp &middot; Jan 2022 – Present</p>
+            <p class="timeline-description">Built responsive web interfaces with focus on accessibility and smooth user experience.</p>
+          </div>
+        </div>
+    
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Intern Developer</h3>
+            <p class="timeline-company">ABC Agency &middot; June 2021 – Dec 2021</p>
+            <p class="timeline-description">Assisted in crafting UI components using HTML, CSS, and basic JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
   </main>
 
   <footer class="footer">
     <div class="footer-container">
       <p class="footer-tagline">From idea to impact — simple, effective digital solutions.</p>
-  
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="Projects.html">Projects</a>
         <a href="#contact">Contact</a>
       </div>
-  
       <div class="footer-social">
         <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank">GitHub</a>
         <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank">LinkedIn</a>
       </div>
-  
-      <p class="footer-copy">&copy; 2025 Your Name</p>
+      <p class="footer-copy">© 2025 Your Name</p>
     </div>
   </footer>
-  
   
   <script>
     // Toggle menu on small screens
