@@ -8,6 +8,92 @@
   <!-- Optional: add Google Fonts link for better typography -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 </head>
+<style>
+  .contact-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.via-text {
+  color: #007bff;
+  font-weight: 700;
+}
+
+.contact-message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 35px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background-color: #f9fafa;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 123, 255, 0.08);
+}
+
+.contact-card h3 {
+  font-size: 1.1rem;
+  color: #007bff;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.contact-card a {
+  font-size: 0.9rem;
+  color: #1c1c1c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .contact-card {
+    text-align: center;
+    padding: 18px;
+  }
+}
+
+</style>
 
 <body>
   <!-- Header / Navbar -->
@@ -107,8 +193,42 @@
     </div>
   </div>
 </section>
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">Get in Touch <span class="via-text">with Us</span></h2>
+    <p class="contact-message">We’re excited to collaborate with you. Reach out through any of the channels below.</p>
 
-    
+    <div class="contact-grid">
+      <div class="contact-card fade-slide">
+        <div class="icon">📘</div>
+        <h3>Facebook</h3>
+        <p>Connect with us on our official page.</p>
+        <a href="https://www.facebook.com/gocreatestudio13" target="_blank" rel="noopener">Visit Page →</a>
+      </div>
+
+      <div class="contact-card fade-slide">
+        <div class="icon">📱</div>
+        <h3>Smart</h3>
+        <p>Call us at this number.</p>
+        <a href="tel:09653070629">0965 307 0629</a>
+      </div>
+
+      <div class="contact-card fade-slide">
+        <div class="icon">📲</div>
+        <h3>Globe</h3>
+        <p>Reach us during business hours.</p>
+        <a href="tel:09525434665">0952 543 4665</a>
+      </div>
+
+      <div class="contact-card fade-slide">
+        <div class="icon">✉️</div>
+        <h3>Email</h3>
+        <p>Send us your inquiries anytime.</p>
+        <a href="mailto:gocreatestudio13@gmail.com">gocreatestudio13@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="services">
   <h1>Services</h1>
   <p class="sub-title">Here’s how we help your ideas take shape</p>
@@ -191,8 +311,8 @@
     <a href="#" class="project-link" data-image="/HTML/Pictures/shot (221).png">
       <img src="/HTML/Pictures/shot (221).png" alt="Project 2" class="project-image" />
     </a>
-    <a href="#" class="project-link" data-image="/HTML/Pictures/shot (placeholder).png">
-      <img src="/HTML/Pictures/shot (placeholder).png" alt="Project 3" class="project-image" />
+    <a href="#" class="project-link" data-image="/HTML/Pictures/helow.png">
+      <img src="/HTML/Pictures/helow.png" alt="Project 3" class="project-image" />
     </a>
   </div>
 </section>
