@@ -2,70 +2,497 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="/CSS/Services.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GoCreateStudio - Services</title>
+  <!-- Google Fonts (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+<style>
+  * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #222;
+    }
+
+    main {
+      min-height: calc(100vh - 80px - 220px); /* Adjust based on navbar/footer height */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .navbar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 42px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1c1c1c;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1c1c1c;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #007bff;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #007bff;
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .cta {
+      background-color: #007bff;
+      color: #fff !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    }
+
+    .nav-links .cta:hover {
+      background-color: #0056b3;
+    }
+
+    .menu-button {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    #services {
+      padding: 100px 1.5rem 3rem; /* top padding added to prevent overlap with fixed navbar */
+      background: #fafafa;
+      text-align: center;
+    }
+
+    #services h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+
+    #services .sub-title {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 260px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .contact-section {
+      padding: 60px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .via-text {
+      color: #007bff;
+      font-weight: 700;
+    }
+
+    .contact-message {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 35px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background-color: #f9fafa;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 123, 255, 0.08);
+    }
+
+    .contact-card h3 {
+      font-size: 1.1rem;
+      color: #007bff;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .contact-card a {
+      font-size: 0.9rem;
+      color: #1c1c1c;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .contact-card a:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .contact-card {
+        text-align: center;
+        padding: 18px;
+      }
+    }
+
+    .footer {
+      background-color: #000;
+      color: #f1f1f1;
+      padding: 30px 15px 20px;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-highlight {
+      font-size: 20px;
+      font-weight: 600;
+      color: #f1f1f1;
+      margin: 0 auto 25px;
+      max-width: 700px;
+      line-height: 1.5;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-links,
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a,
+    .footer-social a {
+      color: #aaa;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+
+    .footer-links a::after,
+    .footer-social a::after {
+      content: "";
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: #007bff;
+      transition: width 0.3s ease;
+      margin: 4px auto 0;
+    }
+
+    .footer-links a:hover,
+    .footer-social a:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .footer-links a:hover::after,
+    .footer-social a:hover::after {
+      width: 50%;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 20px;
+      letter-spacing: 0.3px;
+    }
+</style>
 <body>
-    <header class="navbar">
-        <div class="container">
-          <a href="/" class="brand" aria-label="Home">
-            <img src="/images/logo.png" alt="Logo of Your Name" class="logo" />
-            <span class="brand-name">Your Name</span>
-          </a>
-          <nav class="nav-links" role="navigation">
-            <a href="Index.html">Home</a>
-            <a href="AboutMe.html">About Me</a>
-            <a href="Index.html">Projects</a>
-            <a href="Services.html">Services</a>
-          </nav>
-          <button class="menu-button" aria-label="Toggle Menu">☰</button>
-        </div>
-      </header> 
-  <h1>Services</h1>
-  <p class="sub-title">What I Offer to Bring Your Vision to Life</p>
-
-  <div class="grid">
-    <div class="card">
-      <div class="icon">🎨</div>
-      <div class="card-title">Canva for Posters</div>
-      <div class="card-desc">Creative and eye-catching poster designs tailored to your brand’s message.</div>
+<main>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="/" class="brand" aria-label="Home">
+        <img src="/HTML/Pictures/Untitled design (3).png" alt="GoCreateStudio Logo" class="logo" />
+        <span class="brand-name">GoCreate</span>
+      </a>
+      <nav class="nav-links" role="navigation">
+        <a href="Index.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Services.html">Services</a>
+        <a href="Appointmnet.html" class="cta">Let’s Work Together</a>
+      </nav>
+      <button class="menu-button" aria-label="Toggle Menu">☰</button>
     </div>
+  </header>
 
-    <div class="card">
-      <div class="icon">📝</div>
-      <div class="card-title">Daily Blog Posts</div>
-      <div class="card-desc">Engaging content delivered daily to boost your online presence and audience.</div>
-    </div>
+  <!-- Services Section -->
+  <section id="services">
+    <h1>Services</h1>
+    <p class="sub-title">Here’s how we help your ideas take shape</p>
 
-    <div class="card">
-      <div class="icon">💻</div>
-      <div class="card-title">Web Development</div>
-      <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
-    </div>
-
-    <div class="card">
+    <div class="services-grid">
+      <div class="card">
         <div class="icon">💻</div>
-        <div class="card-title">Mobile Development</div>
-        <div class="card-desc">Modern, responsive websites built to perform and convert visitors.</div>
+        <div class="card-title">Web Development</div>
+        <div class="card-desc">
+          We build fast, clean, and responsive websites — from landing pages to full platforms. Whether it's frontend, backend, or both, we’ve got it covered.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎨</div>
+        <div class="card-title">Graphics & Branding</div>
+        <div class="card-desc">
+          Need a logo, social media post, or full brand style? We design visuals that reflect who you are and connect with your audience.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">📢</div>
+        <div class="card-title">Ad Design & Creatives</div>
+        <div class="card-desc">
+          We create ads that speak to people — not just flashy designs, but messages that get clicks, calls, and customers.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤖</div>
+        <div class="card-title">AI Image Tools</div>
+        <div class="card-desc">
+          We use tools like Python and TensorFlow to create AI image features — from filters to recognitions. Complex? We make it simple for you.
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon">🏢</div>
+        <div class="card-title">Local Business Sites</div>
+        <div class="card-desc">
+          We build easy-to-manage websites for local shops, clinics, or services — optimized for Google and designed to convert.
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon">📱</div>
+        <div class="card-title">Social Media Management</div>
+        <div class="card-desc">
+          Don’t know what to post? We create, schedule, and boost your content so your page grows while you focus on running your business.
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon">🌐</div>
+        <div class="card-title">Web Hosting</div>
+        <div class="card-desc">
+          Hosting that’s reliable, secure, and easy to manage. We’ll help you set it up, keep it live, and scale it as needed.
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <div class="card-title">Site Maintenance</div>
+        <div class="card-desc">
+          We keep your site updated, backed up, and running smoothly — so you don’t have to worry about the technical stuff.
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <h2 class="contact-title">Get in Touch <span class="via-text">with Us</span></h2>
+      <p class="contact-message">We’re excited to collaborate with you. Reach out through any of the channels below.</p>
+  
+      <div class="contact-grid">
+        <div class="contact-card fade-slide">
+          <div class="icon">📘</div>
+          <h3>Facebook</h3>
+          <p>Connect with us on our official page.</p>
+          <a href="https://www.facebook.com/gocreatestudio13" target="_blank" rel="noopener">Visit Page →</a>
+        </div>
+  
+        <div class="contact-card fade-slide">
+          <div class="icon">📱</div>
+          <h3>Smart</h3>
+          <p>Call us at this number.</p>
+          <a href="tel:09653070629">0965 307 0629</a>
+        </div>
+  
+        <div class="contact-card fade-slide">
+          <div class="icon">📲</div>
+          <h3>Globe</h3>
+          <p>Reach us during business hours.</p>
+          <a href="tel:09525434665">0952 543 4665</a>
+        </div>
+  
+        <div class="contact-card fade-slide">
+          <div class="icon">✉️</div>
+          <h3>Email</h3>
+          <p>Send us your inquiries anytime.</p>
+          <a href="mailto:gocreatestudio13@gmail.com">gocreatestudio13@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-tagline">
+        
+          <p class="footer-highlight">We don’t just fix problems — we improve everything we touch.</p>
+        </div>
       </div>
   
-    <div class="card coming-soon">
-      <div class="icon">🎮</div>
-      <div class="card-title">Game Development</div>
-      <div class="card-desc">Coming Soon: Interactive and immersive gaming experiences.</div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="Projects.html">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+  
+      <div class="footer-social">
+        <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank">LinkedIn</a>
+      </div>
+  
+      <p class="footer-copy">© 2025 GoCreate Studio Begins Today</p>
     </div>
-
-    <div class="card coming-soon">
-      <div class="icon">🖥️</div>
-      <div class="card-title">3D Modelling</div>
-      <div class="card-desc">Coming Soon: High-quality 3D models for your projects and presentations.</div>
-    </div>
-  </div>
-
-  <div class="motto">
-    From idea to impact — simple, effective digital solutions. Let’s make it happen.
-  </div>
+  </footer>
 </body>
 </html>

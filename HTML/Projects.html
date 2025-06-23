@@ -2,304 +2,545 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects - Categorized</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recent Projects Slider</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f4f6f8;
-      color: #212529;
-    }
+    /* Root & Body */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #222;
+}
 
-    h1 {
-      text-align: center;
-      font-weight: 800;
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #0d6efd, #6610f2);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+/* Headings */
+h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
 
-    .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      padding: 2rem 2rem;
-      
-      display: flex;
-      flex-direction: row;      
-      justify-content: center;
-      align-items: center;
-      border-bottom: 1px solid #dee2e6;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-    }
+h2::after {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background: #e73700;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+}
 
-    .navbar .container {
-      max-width: 1200px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* Project Section */
+.project-section {
+  padding: 60px 30px;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      text-decoration: none;
-    }
+/* Filter Buttons */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    .logo {
-      width: 45px;
-    }
+.filter-btn {
+  background: #eaeaea;
+  color: #333;
+  padding: 10px 18px;
+  border: none;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
 
-    .brand-name {
-      font-size: 2.3rem;
-      font-weight: 900;
-      color: #0d6efd;
-      letter-spacing: 1.5px;
-    }
+.filter-btn:hover,
+.filter-btn.active {
+  background: #007bff;
+  color: #fff;
+}
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+/* Owl Carousel Cards */
+.owl-carousel .item {
+  width: 320px;
+  height: 400px;
+  background: #343434 no-repeat center center / cover;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 15px 40px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
 
-    .nav-links a {
-      position: relative;
-      text-decoration: none;
-      color: #333;
-      font-size: 1.2rem;
-      font-weight: 700;
-      transition: color 0.3s ease;
-    }
+.item.active {
+  width: 500px;
+  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+}
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 3px;
-      background: #007bff;
-      left: 0;
-      bottom: -5px;
-      transition: width 0.3s ease;
-    }
+.item::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
 
-    .nav-links a:hover {
-      color: #0d6efd;
-    }
+.item-desc {
+  padding: 0 24px 16px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  transform: translateY(calc(100% - 60px));
+  transition: all 0.4s ease-in-out;
+}
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+.item.active .item-desc {
+  transform: translateY(0);
+}
 
-    .nav-links a.cta {
-      background: linear-gradient(135deg, #007bff, #00b4d8);
-      color: white;
-      padding: 0.6rem 1.5rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      font-weight: 700;
-    }
+.item-desc h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
 
-    .nav-links a.cta:hover {
-      background: linear-gradient(135deg, #005fa3, #0086c3);
-      transform: scale(1.05);
-    }
+.item-desc p {
+  opacity: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out 0.2s;
+  margin-top: 8px;
+}
 
-    .menu-button {
-      display: none;
-      font-size: 2rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+.item.active .item-desc p {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    /* Page Intro */
-    p.page-intro {
-      text-align: center;
-      color: #6c757d;
-      margin-bottom: 40px;
-      font-size: 1.15rem;
-    }
+/* Owl Dots */
+.owl-dots {
+  text-align: center;
+  margin-top: -20px;
+}
 
-    /* Section Title */
-    section.category {
-      margin-bottom: 60px;
-    }
+.owl-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 6px;
+  background: #ccc;
+  transition: 0.3s;
+}
 
-    section.category h2 {
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #0d6efd;
-      border-bottom: 3px solid #6610f2;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+.owl-dot.active {
+  background: #007bff;
+}
 
-    section.category h2 small {
-      font-weight: 400;
-      font-size: 1rem;
-      color: #888;
-      margin-left: 10px;
-      font-style: italic;
-    }
+/* Project Intro Card */
+.project-intro-card {
+  max-width: 780px;
+  margin: 0 auto 50px;
+  padding: 28px 36px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: slideFadeUp 0.7s ease-out both;
+}
 
-    /* Project Cards Grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
+.project-intro-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 123, 255, 0.1);
+}
 
-    article.project-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
+.project-intro-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #007bff;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
 
-    article.project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-    }
+.project-intro-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+}
 
-    article.project-card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      color: #6610f2;
-    }
+/* Animation */
+@keyframes slideFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    article.project-card p {
-      color: #495057;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+/* Responsive */
+@media (max-width: 768px) {
+  .owl-carousel .item {
+    width: 240px;
+    height: 320px;
+  }
 
-    .coming-soon {
-      font-style: italic;
-      color: #888;
-      font-size: 1.1rem;
-      margin-top: 8px;
-    }
+  .item.active {
+    width: 100%;
+  }
+}
 
-    /* Footer / Motto */
-    .moto {
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.25rem;
-      color: #0d6efd;
-      margin-top: 40px;
-      border-top: 1px solid #ddd;
-      padding-top: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #f1f1f1;
+  padding: 30px 15px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  border-top: 1px solid #1a1a1a;
+}
 
-    .moto strong {
-      color: #6610f2;
-    }
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-highlight {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f1f1f1;
+  margin: 0 auto 25px;
+  max-width: 700px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.footer-links a,
+.footer-social a {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.footer-links a::after,
+.footer-social a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s ease;
+  margin: 4px auto 0;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-links a:hover::after,
+.footer-social a:hover::after {
+  width: 50%;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* Navbar */
+.navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo {
+  width: 42px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links .cta {
+  background-color: #007bff;
+  color: #fff !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.nav-links .cta:hover {
+  background-color: #0056b3;
+}
+
+.menu-button {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body>
+  <main>
   <header class="navbar">
     <div class="container">
       <a href="/" class="brand" aria-label="Home">
-        <img src="/images/logo.png" alt="Logo" class="logo" />
-        <span class="brand-name">Your Name</span>
+        <img src="/HTML/Pictures/Untitled design (3).png" alt="Logo of Your Name" class="logo" />
+        <span class="brand-name">GoCreate</span>
       </a>
       <nav class="nav-links" role="navigation">
         <a href="Index.html">Home</a>
         <a href="AboutMe.html">About Me</a>
-        <a href="#projects">Projects</a>
+        <a href="Projects.html">Projects</a>
         <a href="Services.html">Services</a>
         <a href="Appointmnet.html" class="cta">Let’s Work Together</a>
       </nav>
       <button class="menu-button" aria-label="Toggle Menu">☰</button>
     </div>
   </header> 
+  <section class="project-section">
+    <h2>Recent Projects</h2>
 
-  <h1>Projects</h1>
-  <p class="page-intro">Showcasing my work by service categories</p>
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="blog">Blog</button>
+      <button class="filter-btn" data-filter="store">Store</button>
+      <button class="filter-btn" data-filter="page">Landing Page</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+    </div>
 
-  <section id="web-development" class="category">
-    <h2>Web Development</h2>
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3>Responsive Portfolio Website</h3>
-        <p>A sleek, mobile-friendly portfolio site designed with modern UX principles.</p>
-      </article>
-      <article class="project-card">
-        <h3>E-commerce Platform</h3>
-        <p>Full-stack online store with secure payments and user dashboards.</p>
-      </article>
+    <!-- Carousel -->
+    <div class="owl-carousel custom-carousel owl-theme">
+      <div class="item active" data-category="web" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/dota-2.jpg');">
+        <div class="item-desc">
+          <h3>Portfolio Website</h3>
+          <p>Modern personal site to showcase your work and skills. Built with HTML, CSS, and JS.</p>
+        </div>
+      </div>
+
+      <div class="item" data-category="blog" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg');">
+        <div class="item-desc">
+          <h3>Food Blog</h3>
+          <p>SEO-friendly food blog with image galleries, categories, and mobile responsiveness.</p>
+        </div>
+      </div>
+
+      <div class="item" data-category="store" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg');">
+        <div class="item-desc">
+          <h3>E-commerce Store</h3>
+          <p>React + Firebase online shop with cart, filtering, and secure checkout system.</p>
+        </div>
+      </div>
+
+      <div class="item" data-category="page" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg');">
+        <div class="item-desc">
+          <h3>Landing Page</h3>
+          <p>Conversion-optimized landing page with animation, CTA buttons, and smooth scroll.</p>
+        </div>
+      </div>
+
+      <div class="item" data-category="web" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg');">
+        <div class="item-desc">
+          <h3>Real Estate Listing</h3>
+          <p>PHP-based listing platform with image uploads, filters, and property maps.</p>
+        </div>
+      </div>
+
+      <div class="item" data-category="business" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg');">
+        <div class="item-desc">
+          <h3>Business Website</h3>
+          <p>Corporate website with contact forms, services, about pages, and team profiles.</p>
+        </div>
+      </div>
     </div>
   </section>
-
-  <section id="mobile-development" class="category">
-    <h2>Mobile Development</h2>
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3>Fitness Tracker App</h3>
-        <p>Cross-platform app to monitor workouts and health stats with real-time data.</p>
-      </article>
-      <article class="project-card">
-        <h3>Event Booking App</h3>
-        <p>User-friendly app for browsing and booking local events and activities.</p>
-      </article>
+  <section class="project-intro-section">
+    <div class="project-intro-card">
+      <h3>Recent Projects Overview</h3>
+      <p>
+        At <strong>GoCreateStudio</strong>, we may be at the beginning of our journey — but we're driven by purpose and passion.
+        <br><br>
+        Every project we take on is an opportunity to solve real-world problems through creativity, precision, and care.
+        <br><br>
+        Our mission is clear: <strong>we don’t just aim to meet your expectations — we’re here to exceed them</strong>.
+        <br><br>
+        <strong>Your project could be the next featured in our journey.</strong>
+      </p>
     </div>
   </section>
-
-  <section id="canva-posters" class="category">
-    <h2>Canva Posters</h2>
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3>Marketing Campaign Poster</h3>
-        <p>Bright, engaging visuals created for social media and print campaigns.</p>
-      </article>
-      <article class="project-card">
-        <h3>Event Invitation Poster</h3>
-        <p>Stylish, clean invitation designs tailored to client branding.</p>
-      </article>
+</main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-tagline">
+        
+          <p class="footer-highlight">We don’t just fix problems — we improve everything we touch.</p>
+        </div>
+      </div>
+  
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="Projects.html">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+  
+      <div class="footer-social">
+        <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank">LinkedIn</a>
+      </div>
+  
+      <p class="footer-copy">© 2025 GoCreate Studio Begins Today</p>
     </div>
-  </section>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-  <section id="daily-blog-posts" class="category">
-    <h2>Daily Blog Posts</h2>
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3>Tech Trends Weekly</h3>
-        <p>Insights and analysis on the latest in technology and digital innovation.</p>
-      </article>
-      <article class="project-card">
-        <h3>Creative Writing Series</h3>
-        <p>Engaging short stories and thought pieces published daily for reader engagement.</p>
-      </article>
-    </div>
-  </section>
+  <script>
+    $(".custom-carousel").owlCarousel({
+      autoWidth: true,
+      loop: true,
+      dots: true
+    });
 
-  <section id="game-development" class="category">
-    <h2>Game Development <small>(Coming Soon)</small></h2>
-    <p class="coming-soon">Excited to launch gaming projects soon!</p>
-  </section>
+    $(document).ready(function () {
+      $(".custom-carousel .item").click(function () {
+        $(".custom-carousel .item").not(this).removeClass("active");
+        $(this).toggleClass("active");
+      });
 
-  <section id="3d-modelling" class="category">
-    <h2>3D Modelling <small>(Coming Soon)</small></h2>
-    <p class="coming-soon">Stay tuned for 3D models and visualizations.</p>
-  </section>
+      $(".filter-btn").click(function () {
+        const filter = $(this).data("filter");
+        $(".filter-btn").removeClass("active");
+        $(this).addClass("active");
 
-  <div class="moto">
-    From idea to impact — simple, effective digital solutions. <strong>Let’s make it happen.</strong>
-  </div>
+        $(".custom-carousel .item").each(function () {
+          const category = $(this).data("category");
+          if (filter === "all" || category === filter) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
