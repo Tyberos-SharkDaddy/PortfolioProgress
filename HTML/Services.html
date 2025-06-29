@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GoCreateStudio - Services</title>
-  <!-- Google Fonts (optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<style>
-  * {
+  <style>
+    * {
       box-sizing: border-box;
     }
 
@@ -25,7 +23,7 @@
     }
 
     main {
-      min-height: calc(100vh - 80px - 220px); /* Adjust based on navbar/footer height */
+      min-height: calc(100vh - 80px - 220px);
       display: flex;
       flex-direction: column;
     }
@@ -128,7 +126,7 @@
     }
 
     #services {
-      padding: 100px 1.5rem 3rem; /* top padding added to prevent overlap with fixed navbar */
+      padding: 100px 1.5rem 3rem;
       background: #fafafa;
       text-align: center;
     }
@@ -154,22 +152,44 @@
       margin: 0 auto;
     }
 
+    /* Animation */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .card {
       background-color: #fff;
       border-radius: 12px;
       padding: 1.5rem;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       min-height: 260px;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards;
     }
 
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+    .card:nth-child(6) { animation-delay: 0.6s; }
+    .card:nth-child(7) { animation-delay: 0.7s; }
+    .card:nth-child(8) { animation-delay: 0.8s; }
+
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 123, 255, 0.1);
     }
 
     .icon {
@@ -277,7 +297,6 @@
       background-color: #000;
       color: #f1f1f1;
       padding: 30px 15px 20px;
-      font-family: 'Poppins', sans-serif;
       text-align: center;
       border-top: 1px solid #1a1a1a;
     }
@@ -345,10 +364,10 @@
       margin-top: 20px;
       letter-spacing: 0.3px;
     }
-</style>
+  </style>
+</head>
 <body>
 <main>
-  <!-- Navbar -->
   <header class="navbar">
     <div class="container">
       <a href="/" class="brand" aria-label="Home">
@@ -370,129 +389,47 @@
   <section id="services">
     <h1>Services</h1>
     <p class="sub-title">Here’s how we help your ideas take shape</p>
-
     <div class="services-grid">
-      <div class="card">
-        <div class="icon">💻</div>
-        <div class="card-title">Web Development</div>
-        <div class="card-desc">
-          We build fast, clean, and responsive websites — from landing pages to full platforms. Whether it's frontend, backend, or both, we’ve got it covered.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="icon">🎨</div>
-        <div class="card-title">Graphics & Branding</div>
-        <div class="card-desc">
-          Need a logo, social media post, or full brand style? We design visuals that reflect who you are and connect with your audience.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="icon">📢</div>
-        <div class="card-title">Ad Design & Creatives</div>
-        <div class="card-desc">
-          We create ads that speak to people — not just flashy designs, but messages that get clicks, calls, and customers.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="icon">🤖</div>
-        <div class="card-title">AI Image Tools</div>
-        <div class="card-desc">
-          We use tools like Python and TensorFlow to create AI image features — from filters to recognitions. Complex? We make it simple for you.
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon">🏢</div>
-        <div class="card-title">Local Business Sites</div>
-        <div class="card-desc">
-          We build easy-to-manage websites for local shops, clinics, or services — optimized for Google and designed to convert.
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon">📱</div>
-        <div class="card-title">Social Media Management</div>
-        <div class="card-desc">
-          Don’t know what to post? We create, schedule, and boost your content so your page grows while you focus on running your business.
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon">🌐</div>
-        <div class="card-title">Web Hosting</div>
-        <div class="card-desc">
-          Hosting that’s reliable, secure, and easy to manage. We’ll help you set it up, keep it live, and scale it as needed.
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon">🛠️</div>
-        <div class="card-title">Site Maintenance</div>
-        <div class="card-desc">
-          We keep your site updated, backed up, and running smoothly — so you don’t have to worry about the technical stuff.
-        </div>
-      </div>
+      <div class="card"><div class="icon">💻</div><div class="card-title">Web Development</div><div class="card-desc">We build fast, clean, and responsive websites — from landing pages to full platforms.</div></div>
+      <div class="card"><div class="icon">🎨</div><div class="card-title">Graphics & Branding</div><div class="card-desc">Logos, branding kits, and everything visual that connects with your audience.</div></div>
+      <div class="card"><div class="icon">📢</div><div class="card-title">Ad Design & Creatives</div><div class="card-desc">We create visuals that get clicks, calls, and customers.</div></div>
+      <div class="card"><div class="icon">🤖</div><div class="card-title">AI Image Tools</div><div class="card-desc">Smart filters, recognition tools, or visual enhancements with AI? We got it.</div></div>
+      <div class="card"><div class="icon">🏢</div><div class="card-title">Local Business Sites</div><div class="card-desc">Easy-to-manage websites for clinics, shops, and service providers.</div></div>
+      <div class="card"><div class="icon">📱</div><div class="card-title">Social Media Management</div><div class="card-desc">We create, schedule, and grow your page while you run your business.</div></div>
+      <div class="card"><div class="icon">🌐</div><div class="card-title">Web Hosting</div><div class="card-desc">Secure, fast, and reliable hosting solutions set up for you.</div></div>
+      <div class="card"><div class="icon">🛠️</div><div class="card-title">Site Maintenance</div><div class="card-desc">Updates, backups, and monitoring handled by us so you can focus on work.</div></div>
     </div>
   </section>
+
   <section class="contact-section" id="contact">
     <div class="contact-container">
       <h2 class="contact-title">Get in Touch <span class="via-text">with Us</span></h2>
       <p class="contact-message">We’re excited to collaborate with you. Reach out through any of the channels below.</p>
-  
       <div class="contact-grid">
-        <div class="contact-card fade-slide">
-          <div class="icon">📘</div>
-          <h3>Facebook</h3>
-          <p>Connect with us on our official page.</p>
-          <a href="https://www.facebook.com/gocreatestudio13" target="_blank" rel="noopener">Visit Page →</a>
-        </div>
-  
-        <div class="contact-card fade-slide">
-          <div class="icon">📱</div>
-          <h3>Smart</h3>
-          <p>Call us at this number.</p>
-          <a href="tel:09653070629">0965 307 0629</a>
-        </div>
-  
-        <div class="contact-card fade-slide">
-          <div class="icon">📲</div>
-          <h3>Globe</h3>
-          <p>Reach us during business hours.</p>
-          <a href="tel:09525434665">0952 543 4665</a>
-        </div>
-  
-        <div class="contact-card fade-slide">
-          <div class="icon">✉️</div>
-          <h3>Email</h3>
-          <p>Send us your inquiries anytime.</p>
-          <a href="mailto:gocreatestudio13@gmail.com">gocreatestudio13@gmail.com</a>
-        </div>
+        <div class="contact-card"><div class="icon">📘</div><h3>Facebook</h3><p>Connect with us on our official page.</p><a href="https://www.facebook.com/gocreatestudio13" target="_blank">Visit Page →</a></div>
+        <div class="contact-card"><div class="icon">📱</div><h3>Smart</h3><p>Call us at this number.</p><a href="tel:09653070629">0965 307 0629</a></div>
+        <div class="contact-card"><div class="icon">📲</div><h3>Globe</h3><p>Reach us during business hours.</p><a href="tel:09525434665">0952 543 4665</a></div>
+        <div class="contact-card"><div class="icon">✉️</div><h3>Email</h3><p>Send us your inquiries anytime.</p><a href="mailto:gocreatestudio13@gmail.com">gocreatestudio13@gmail.com</a></div>
       </div>
     </div>
   </section>
 </main>
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-top">
-        <div class="footer-tagline">
-        
-          <p class="footer-highlight">We don’t just fix problems — we improve everything we touch.</p>
-        </div>
-      </div>
-  
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="Projects.html">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-  
-      <div class="footer-social">
-        <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank">LinkedIn</a>
-      </div>
-  
-      <p class="footer-copy">© 2025 GoCreate Studio Begins Today</p>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-highlight">We don’t just fix problems — we improve everything we touch.</div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="Projects.html">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
-  </footer>
+    <div class="footer-social">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-copy">© 2025 GoCreate Studio Begins Today</p>
+  </div>
+</footer>
 </body>
 </html>

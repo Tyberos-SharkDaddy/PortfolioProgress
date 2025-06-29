@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meet the Team - GoCreateStudio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --subtle: #666666;
+      --light: #f5f5f5;
+      --card-shadow: rgba(0, 0, 0, 0.04);
+      --accent: #0d6efd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .headline {
+      font-size: 2.25rem;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: var(--subtle);
+      margin-top: 0.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .card {
+      background: var(--bg);
+      border-radius: 1rem;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 4px 16px var(--card-shadow);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .visual {
+      width: 2in;
+      height: 2in;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      border: 1px solid #eee;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .avatar-img {
+      transform: scale(1.05);
+    }
+
+    .team-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .team-title {
+      font-size: 0.9rem;
+      color: var(--subtle);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-bio {
+      font-size: 0.8rem;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .headline {
+        font-size: 1.5rem;
+      }
+
+      .modal-content {
+        padding: 1.5rem;
+      }
+
+      .team-bio {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="header">
+      <h2 class="headline">Meet the Team</h2>
+      <p class="tagline">Creative minds building something different</p>
+    </div>
+
+    <ul class="cards">
+      <li class="card" data-name="CEO" data-role="Chief Executive Officer" data-bio="A young visionary still in school, who founded GoCreateStudio by bringing together unemployed graduates with just a dream and no budget." data-img="/HTML/Pictures/THECEO.jpg">
+        <div class="visual"><img class="avatar-img" src="/HTML/Pictures/THECEO.jpg" alt="CEO"></div>
+        <h3 class="team-name">CEO</h3>
+        <p class="team-title">Chief Executive Officer</p>
+        <p class="team-bio">A young visionary still in school, who founded GoCreateStudio by bringing together unemployed graduates with just a dream and no budget.</p>
+      </li>
+
+      <li class="card" data-name="COO" data-role="Chief Operations Officer" data-bio="The strategist and key operations person, handling portfolios and client meetings while giving the CEO space to focus on studies." data-img="/HTML/Pictures/COO.jpg">
+        <div class="visual"><img class="avatar-img" src="/HTML/Pictures/COO.jpg" alt="COO"></div>
+        <h3 class="team-name">COO</h3>
+        <p class="team-title">Chief Operations Officer</p>
+        <p class="team-bio">The strategist and key operations person, handling portfolios and client meetings while giving the CEO space to focus on studies.</p>
+      </li>
+
+      <li class="card" data-name="CAO" data-role="Chief Admin Officer" data-bio="In charge of finance, social media, marketing, and design. Works closely with the COO to manage campaigns and branding." data-img="/mnt/data/aa9328d2-9d3a-4738-a814-bf8511877cc2.png">
+        <div class="visual"><img class="avatar-img" src="/mnt/data/aa9328d2-9d3a-4738-a814-bf8511877cc2.png" alt="CAO"></div>
+        <h3 class="team-name">CAO</h3>
+        <p class="team-title">Chief Admin Officer</p>
+        <p class="team-bio">In charge of finance, social media, marketing, and design. Works closely with the COO to manage campaigns and branding.</p>
+      </li>
+
+      <li class="card" data-name="CTO" data-role="Chief Technology Officer" data-bio="Part of the developer team. Coordinates with the CEO and OP to handle tech stack, development, and innovations." data-img="/HTML/Pictures/CTO.jpg">
+        <div class="visual"><img class="avatar-img" src="/HTML/Pictures/CTO.jpg" alt="CTO"></div>
+        <h3 class="team-name">CTO</h3>
+        <p class="team-title">Chief Technology Officer</p>
+        <p class="team-bio">Part of the developer team. Coordinates with the CEO and OP to handle tech stack, development, and innovations.</p>
+      </li>
+
+      <li class="card" data-name="OP Manager" data-role="Operations Manager" data-bio="Also a full-stack dev, responsible for helping lead internal coordination among the dev team and project implementation." data-img="https://via.placeholder.com/300">
+        <div class="visual"><img class="avatar-img" src="https://via.placeholder.com/300" alt="OP Manager"></div>
+        <h3 class="team-name">Operations Manager</h3>
+        <p class="team-title">Full-stack Developer</p>
+        <p class="team-bio">Also a full-stack dev, responsible for helping lead internal coordination among the dev team and project implementation.</p>
+      </li>
+
+      <li class="card" data-name="Coming Soon" data-role="TBD" data-bio="A new team member is on the way. Stay tuned for more additions to the squad." data-img="https://via.placeholder.com/300">
+        <div class="visual"><img class="avatar-img" src="https://via.placeholder.com/300" alt="Coming Soon"></div>
+        <h3 class="team-name">Coming Soon</h3>
+        <p class="team-title">New Member</p>
+        <p class="team-bio">A new team member is on the way. Stay tuned for more additions to the squad.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="teamModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <img id="modalImg" src="" alt="Team Member">
+      <h3 id="modalName"></h3>
+      <p id="modalRole"></p>
+      <p id="modalBio"></p>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('teamModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalName = document.getElementById('modalName');
+    const modalRole = document.getElementById('modalRole');
+    const modalBio = document.getElementById('modalBio');
+    const modalImg = document.getElementById('modalImg');
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalName.textContent = card.dataset.name;
+        modalRole.textContent = card.dataset.role;
+        modalBio.textContent = card.dataset.bio;
+        modalImg.src = card.dataset.img;
+      });
+    });
+
+    modalClose.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', e => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

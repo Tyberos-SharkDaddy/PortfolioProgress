@@ -92,6 +92,381 @@
     padding: 18px;
   }
 }
+/* Services Section */
+.services-section {
+      padding: 60px 30px;
+    }
+
+    /* Owl Carousel Cards */
+    .owl-carousel .item {
+      width: 300px;
+      height: 350px;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      margin: 0 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .item.active {
+      width: 350px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .item-desc {
+      padding: 20px;
+      color: #333;
+      position: relative;
+      z-index: 1;
+    }
+
+    .item-desc .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .item-desc h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+
+    .item-desc p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+      opacity: 1;
+    }
+
+    /* Owl Dots */
+    .owl-dots {
+      text-align: center;
+      margin-top: -20px;
+    }
+
+    .owl-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 6px;
+      background: #ccc;
+      transition: 0.3s;
+    }
+
+    .owl-dot.active {
+      background: #007bff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .owl-carousel .item {
+        width: 240px;
+        height: 300px;
+      }
+
+      .item.active {
+        width: 280px;
+      }
+
+      .item-desc .icon {
+        font-size: 32px;
+      }
+
+      .item-desc h3 {
+        font-size: 18px;
+      }
+
+      .item-desc p {
+        font-size: 13px;
+      }
+    }
+    :root {
+  --bg: #ffffff;
+  --text: #222222;
+  --subtle: #666666;
+  --light: #f5f5f5;
+  --card-shadow: rgba(0, 0, 0, 0.04);
+  --accent: #0d6efd;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Section Styling */
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: var(--subtle);
+}
+/* Team Cards Grid */
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual Card Styling */
+.card {
+  position: relative;
+  border-radius: 1.25rem;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  color: #222;
+  z-index: 0;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  background: inherit;
+  filter: brightness(1.05) saturate(1.1);
+  transition: transform 0.6s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover::before {
+  transform: scale(1.03);
+}
+
+/* Avatar */
+.avatar img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .avatar img {
+  transform: scale(1.06);
+}
+
+/* Text Content */
+.name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.role {
+  font-size: 0.95rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* Theme Variants */
+.card.theme-blue {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #0d47a1;
+}
+
+.card.theme-green {
+  background: linear-gradient(135deg, #e8f5e9, #a5d6a7);
+  color: #1b5e20;
+}
+
+.card.theme-yellow {
+  background: linear-gradient(135deg, #fffde7, #fff59d);
+  color: #f57f17;
+}
+
+.card.theme-pink {
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+  color: #880e4f;
+}
+
+.card.theme-purple {
+  background: linear-gradient(135deg, #ede7f6, #d1c4e9);
+  color: #4a148c;
+}
+
+/* Modal Styling */
+.team-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.team-modal.active {
+  display: flex;
+}
+
+.team-modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.team-modal-img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.team-modal-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.team-modal-role {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.team-modal-bio {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.team-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.team-modal-close:hover {
+  color: #000;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Blur Effect */
+.blur {
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .headline {
+    font-size: 1.7rem;
+  }
+
+  .team-modal-content {
+    padding: 1.5rem;
+  }
+
+  .team-modal-bio {
+    font-size: 0.9rem;
+  }
+}
+.services-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.services-modal.active {
+  display: flex;
+}
+
+.services-modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.services-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.services-modal-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
 
 </style>
 
@@ -106,6 +481,7 @@
       <nav class="nav-links" role="navigation">
         <a href="Index.html">Home</a>
         <a href="AboutMe.html">About Us</a>
+        
         <a href="Contacts.html">Contact</a>
         <a href="Projects.html">Projects</a>
         <a href="Services.html">Services</a>
@@ -119,15 +495,15 @@
     <section class="home" id="home">
       <div class="home-content">
         <div class="text">
-          <div class="text-one">Hi there,</div>
+          <div class="text-one">Hey there,</div>
           <div class="text-two">We’re GoCreateStudio</div>
           <div class="text-three">
-            <strong>We turn ideas into real, working results.</strong><br>
-            No fancy talk — we build what you need, when you need it.<br>
-            We don’t just fix problems — <strong>we improve everything we touch.</strong>
+            <strong>We turn ideas into real results.</strong><br>
+            No jargon. No hype. Just clear, honest work that gets done.<br>
+            We don't just fix problems. We make things better.
           </div>
           <span class="home-summary">
-            A small team that listens, works fast, and delivers better than expected. Always.
+            A small team that listens, builds with care, and focuses on what really matters.
           </span>
         </div>
         <div class="home-actions">
@@ -137,62 +513,112 @@
       </div>
     </section>
     
-<section class="about-us-section" id="about">
-  <div class="about-container">
-    <div class="about-image">
-      <img src="/HTML/Pictures/shot (221).png" alt="Team Photo">
-    </div>
-    <div class="about-text">
-      <h2>Who We Are — GoCreateStudio</h2>
-      <p>
-        We’re a small team of people who love building things — websites, graphics, apps, and anything digital.
-      </p>
-      <p>
-        Some of us are fresh grads. Some are still studying. A few didn’t finish school, but we all kept learning and growing. What matters to us is how we work together.
-      </p>
-      <p>
-        GoCreateStudio started with just one person who believed we could do more. So we combined our ideas, and here we are — building projects for real clients.
-      </p>
-      <p>
-        We don’t just meet expectations — we go beyond. We focus on delivering clean, useful work that helps your business or idea grow.
-      </p>
-    </div>
-  </div>
-</section>
+    
+    <section class="about-us-section" id="about">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="/HTML/Pictures/shot (221).png" alt="Team Photo">
+        </div>
+        <div class="about-text">
+          <h2>Hi, we're GoCreateStudio</h2>
+          <p>
+            We’re a small, passionate team that loves creating — websites, graphics, apps, and anything digital.
+          </p>
+          <p>
+            Some of us just graduated. Some are still in school. Others didn’t finish, but kept learning anyway. What brings us together is how we work as a team and our drive to improve.
+          </p>
+          <p>
+            GoCreateStudio started with one person who believed in doing more. That spark grew as more people joined, bringing their ideas and energy into real projects for real clients.
+          </p>
+          <p>
+            Our goal is simple: make clean, useful work that helps your brand or idea grow. We don’t just do the job — we do it with care, and we aim to go beyond what’s expected.
+          </p>
+        </div>
+      </div>
+    </section>
+    
 
 <section class="project-process">
   <h2>How We Work</h2>
   <div class="process-steps">
     <div class="step">
       <div class="step-number">1</div>
-      <h3>Plan</h3>
-      <p>We start by understanding your goals, then outline a clear and simple plan — step by step.</p>
+      <h3>We Plan</h3>
+      <p>First, we take the time to understand what you want to achieve. Then we map out a clear and realistic plan, so we all know where we’re going.</p>
     </div>
 
     <div class="step">
       <div class="step-number">2</div>
-      <h3>Build</h3>
-      <p>We begin development or design in manageable parts so we can move efficiently and stay flexible.</p>
+      <h3>We Build</h3>
+      <p>Once the plan is set, we start building or designing your project in parts. This helps us stay focused, efficient, and ready to adjust if needed.</p>
     </div>
 
     <div class="step">
       <div class="step-number">3</div>
-      <h3>Test</h3>
-      <p>Every part is reviewed, tested, and adjusted to make sure everything works smoothly — before you even see it.</p>
+      <h3>We Test</h3>
+      <p>Before we show anything to you, we make sure it works. We test every part so it runs smoothly and feels right.</p>
     </div>
 
     <div class="step">
       <div class="step-number">4</div>
-      <h3>Review</h3>
-      <p>We walk you through the work, get your feedback, and make sure it aligns with your expectations.</p>
+      <h3>You Review</h3>
+      <p>Once we’re ready, we’ll show you what we’ve done. You’ll get to check it, give feedback, and make sure everything is on track.</p>
     </div>
 
     <div class="step">
       <div class="step-number">5</div>
-      <h3>Refine</h3>
-      <p>We improve, polish, and finalize the project until it’s ready to launch — clear, clean, and client-ready.</p>
+      <h3>We Refine</h3>
+      <p>After your review, we fine-tune the work  improving and polishing it until it’s ready to go live and represent your brand well.</p>
     </div>
   </div>
+</section>
+
+<section class="section" id="team">
+  <div class="header">
+    <h2 class="headline">Meet the Team</h2>
+    <p class="tagline">Creative minds building something different</p>
+  </div>
+  <ul class="team-cards">
+    <li class="card" data-name="CEO" data-role="Chief Executive Officer" data-bio="A young visionary still in school, who founded GoCreateStudio..." data-img="/HTML/Pictures/THECEO.jpg">
+      <div class="avatar"><img src="/HTML/Pictures/THECEO.jpg" alt="CEO" /></div>
+      <h3 class="name">CEO</h3>
+      <p class="role">Chief Executive Officer</p>
+    </li>
+    <li class="card" data-name="COO" data-role="Chief Operations Officer" data-bio="The strategist and key operations person..." data-img="/HTML/Pictures/COO.jpg">
+      <div class="avatar"><img src="/HTML/Pictures/COO.jpg" alt="COO" /></div>
+      <h3 class="name">COO</h3>
+      <p class="role">Chief Operations Officer</p>
+    </li>
+    <li class="card" data-name="CAO" data-role="Chief Admin Officer" data-bio="In charge of finance, social media, and branding." data-img="/HTML/Pictures/NEWNEW.jpg">
+      <div class="avatar"><img src="/HTML/Pictures/NEWNEW.jpg" alt="CAO" /></div>
+      <h3 class="name">CAO</h3>
+      <p class="role">Chief Admin Officer</p>
+    </li>
+    <li class="card" data-name="CTO" data-role="Chief Technology Officer" data-bio="Part of the developer team. Handles tech stack and innovations." data-img="/HTML/Pictures/CTO.jpg">
+      <div class="avatar"><img src="/HTML/Pictures/CTO.jpg" alt="CTO" /></div>
+      <h3 class="name">CTO</h3>
+      <p class="role">Chief Technology Officer</p>
+    </li>
+    
+   
+  </ul>
+  <div class="team-modal">
+    <div class="team-modal-content">
+      <button class="team-modal-close">×</button>
+      <img class="team-modal-img" src="" alt="Team Member" />
+      <h3 class="team-modal-name"></h3>
+      <p class="team-modal-role"></p>
+      <p class="team-modal-bio"></p>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+
+
+<!-- Modal -->
+
+
 </section>
 <section class="contact-section" id="contact">
   <div class="contact-container">
@@ -232,14 +658,14 @@
 </section>
 <section id="services">
   <h1>Services</h1>
-  <p class="sub-title">Here’s how we help your ideas take shape</p>
+  <p class="sub-title">Here’s how we help your ideas come to life</p>
 
   <div class="services-grid">
     <div class="card">
       <div class="icon">💻</div>
       <div class="card-title">Web Development</div>
       <div class="card-desc">
-        We build fast, clean, and responsive websites — from landing pages to full platforms. Whether it's frontend, backend, or both, we’ve got it covered.
+        We make clean, fast websites that work well on any device. Whether it’s a simple page or a full system, we can build it.
       </div>
     </div>
 
@@ -247,7 +673,7 @@
       <div class="icon">🎨</div>
       <div class="card-title">Graphics & Branding</div>
       <div class="card-desc">
-        Need a logo, social media post, or full brand style? We design visuals that reflect who you are and connect with your audience.
+        Need a logo or a social media post? We design stuff that looks good and feels right for your brand.
       </div>
     </div>
 
@@ -255,7 +681,7 @@
       <div class="icon">📢</div>
       <div class="card-title">Ad Design & Creatives</div>
       <div class="card-desc">
-        We create ads that speak to people — not just flashy designs, but messages that get clicks, calls, and customers.
+        We make ads that people notice and connect with. Not just pretty — they get results too.
       </div>
     </div>
 
@@ -263,7 +689,7 @@
       <div class="icon">🤖</div>
       <div class="card-title">AI Image Tools</div>
       <div class="card-desc">
-        We use tools like Python and TensorFlow to create AI image features — from filters to recognitions. Complex? We make it simple for you.
+        We use smart tools to make cool image stuff with AI. Sounds complicated, but we keep it simple for you.
       </div>
     </div>
 
@@ -271,7 +697,7 @@
       <div class="icon">🏢</div>
       <div class="card-title">Local Business Sites</div>
       <div class="card-desc">
-        We build easy-to-manage websites for local shops, clinics, or services — optimized for Google and designed to convert.
+        We build websites for local shops, clinics, and small businesses. Easy to use and ready to show up on Google.
       </div>
     </div>
 
@@ -279,7 +705,7 @@
       <div class="icon">📱</div>
       <div class="card-title">Social Media Management</div>
       <div class="card-desc">
-        Don’t know what to post? We create, schedule, and boost your content so your page grows while you focus on running your business.
+        Don’t know what to post? We can create and schedule content so your page stays active and grows over time.
       </div>
     </div>
 
@@ -287,7 +713,7 @@
       <div class="icon">🌐</div>
       <div class="card-title">Web Hosting</div>
       <div class="card-desc">
-        Hosting that’s reliable, secure, and easy to manage. We’ll help you set it up, keep it live, and scale it as needed.
+        We host your website so it stays online, secure, and fast. We’ll handle the tech so you don’t have to.
       </div>
     </div>
 
@@ -295,11 +721,23 @@
       <div class="icon">🛠️</div>
       <div class="card-title">Site Maintenance</div>
       <div class="card-desc">
-        We keep your site updated, backed up, and running smoothly — so you don’t have to worry about the technical stuff.
+        Already have a site? We’ll help keep it running smoothly and updated, so you don’t need to worry about it.
       </div>
     </div>
   </div>
+
+  <!-- Services Modal -->
+  <div class="services-modal">
+    <div class="services-modal-content">
+      <button class="services-modal-close">×</button>
+      <div class="services-modal-icon"></div>
+      <h3 class="services-modal-title"></h3>
+      <p class="services-modal-desc"></p>
+    </div>
+  </div>
 </section>
+
+
 
 
 <section id="projects" class="projects-section">
@@ -325,42 +763,41 @@
 </div>
 
     
-    <!-- Contact Section -->
-    <section class="testimonials-section">
-      <h1 class="main-title">Testimonials</h1>
-      <p class="sub-title">We don’t have client feedback yet — but we’re ready to earn it.</p>
+   <!-- Testimonials Section -->
+<section class="testimonials-section">
+  <h1 class="main-title">What Our Clients Say</h1>
+  <p class="sub-title">We don’t have client reviews yet, but we’re ready to earn your trust.</p>
+
+  <div class="testimonials-container">
+    <div class="testimonial-card empty">
+      <p class="testimonial-text">
+        We're just getting started, so we don’t have testimonials yet.<br><br>
+        But we’re excited to work with you and your feedback might be the first one featured here.
+      </p>
+      <h4 class="testimonial-author">GoCreateStudio Team</h4>
+    </div>
+  </div>
+</section>
+
     
-      <div class="testimonials-container">
-        <div class="testimonial-card empty">
-          <p class="testimonial-text">
-            We’re just getting started, so there aren’t any client reviews yet.<br><br>
-            But we’d love to hear from you soon — and maybe your feedback will be the first on this wall.
-          </p>
-          <h4 class="testimonial-author">— GoCreateStudio Team</h4>
-        </div>
+<section class="timeline-section" id="timeline">
+  <h2 class="main-title">Our Journey</h2>
+  <p class="sub-title">Milestones that shaped GoCreateStudio</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3 class="timeline-role">GoCreateStudio Was Born</h3>
+        <p class="timeline-company">GoCreate Team · Started June 2025</p>
+        <p class="timeline-description">
+          It all started with a few freelancers coming together with one goal: to build something real. We shared the same values, worked well as a team, and believed we could do good work for clients and communities.
+        </p>
       </div>
-    
-    </section>
-    
-   
-    
-    <section class="timeline-section" id="timeline">
-      <h2 class="main-title">Our Journey</h2>
-      <p class="sub-title">Milestones that shaped GoCreateStudio</p>
-    
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 class="timeline-role">Founded GoCreateStudio</h3>
-            <p class="timeline-company">GoCreate Team · June 2025 – Present</p>
-            <p class="timeline-description">
-              GoCreateStudio began as a simple collaboration between driven freelancers — a small team with shared values, clear goals, and the belief that we could build something meaningful for clients and communities.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     
   </main>
@@ -369,8 +806,9 @@
     <div class="footer-container">
       <div class="footer-top">
         <div class="footer-tagline">
-        
-          <p class="footer-highlight">We don’t just fix problems — we improve everything we touch.</p>
+          <p class="footer-highlight">
+            We don’t just fix problems. We help improve everything we work on.
+          </p>
         </div>
       </div>
   
@@ -386,39 +824,90 @@
         <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank">LinkedIn</a>
       </div>
   
-      <p class="footer-copy">© 2025 GoCreate Studio Begins Today</p>
+      <p class="footer-copy">© 2025 GoCreate Studio. Let’s start building something great.</p>
     </div>
   </footer>
   
   <script>
-    // Toggle menu on small screens
-    document.querySelector('.menu-button').addEventListener('click', function () {
-      document.querySelector('.nav-links').classList.toggle('active');
+  // ===== Reusable Modal Function =====
+function setupModal({
+  triggerSelector,
+  modalSelector,
+  closeSelector,
+  fillModal = () => {},
+  fade = true
+}) {
+  const modal = document.querySelector(modalSelector);
+  const closeBtn = document.querySelector(closeSelector);
+
+  document.querySelectorAll(triggerSelector).forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      fillModal(trigger, modal);
+      modal.classList.add('active');
+      if (fade) modal.classList.add('fade-in');
     });
-  </script>
-  <script>
-    const modal = document.getElementById("projectModal");
-    const modalImg = document.getElementById("modalImage");
-    const closeBtn = document.querySelector(".close-btn");
-  
-    document.querySelectorAll('.project-link').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const imgSrc = link.getAttribute('data-image');
-        modal.style.display = "block";
-        modalImg.src = imgSrc;
-      });
-    });
-  
-    closeBtn.onclick = function () {
-      modal.style.display = "none";
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    modal.classList.remove('active', 'fade-in');
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.remove('active', 'fade-in');
     }
-  
-    window.onclick = function (event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    }
+  });
+}
+
+// ===== Fade Animation CSS (should be added in your CSS file) =====
+/*
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+*/
+
+// ===== Setup Services Modal =====
+setupModal({
+  triggerSelector: '#services .card',
+  modalSelector: '.services-modal',
+  closeSelector: '.services-modal-close',
+  fillModal: (card, modal) => {
+    modal.querySelector('.services-modal-title').textContent = card.querySelector('.card-title')?.textContent || '';
+    modal.querySelector('.services-modal-desc').textContent = card.querySelector('.card-desc')?.textContent || '';
+    modal.querySelector('.services-modal-icon').textContent = card.querySelector('.icon')?.textContent || '';
+  }
+});
+
+// ===== Setup Team Modal =====
+setupModal({
+  triggerSelector: '#team .card',
+  modalSelector: '.team-modal',
+  closeSelector: '.team-modal-close',
+  fillModal: (card, modal) => {
+    modal.querySelector('.team-modal-img').src = card.dataset.img;
+    modal.querySelector('.team-modal-name').textContent = card.dataset.name;
+    modal.querySelector('.team-modal-role').textContent = card.dataset.role;
+    modal.querySelector('.team-modal-bio').textContent = card.dataset.bio;
+    document.querySelector('.site-content')?.classList.add('blur');
+  }
+});
+
+// ===== Optional: Remove blur when team modal closes =====
+document.querySelector('.team-modal-close')?.addEventListener('click', () => {
+  document.querySelector('.site-content')?.classList.remove('blur');
+});
+window.addEventListener('click', e => {
+  if (e.target.classList.contains('team-modal')) {
+    document.querySelector('.site-content')?.classList.remove('blur');
+  }
+});
+
+
   </script>
   
 </body>
